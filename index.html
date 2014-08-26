@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>CSS: The Hard Parts - </title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="stylesheets/screen.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+	<h1 class="tagline">CSS: The Hard Parts</h1>
+    <h1 class='sub-tagline'>Sub-Tagline TBD</h1>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#code-example-using-github-markdown">Code Example using Github Markdown</a></li>
+<li><a href="#typography">Typography</a><ul>
+<li><a href="#headings">Headings</a></li>
+</ul></li>
+<li><a href="#h1-heading">h1 Heading</a><ul>
+<li><a href="#h2-heading">h2 Heading</a><ul>
+<li><a href="#h3-heading">h3 Heading</a></li>
+</ul></li>
+<li><a href="#horizontal-rules">Horizontal Rules</a></li>
+<li><a href="#body-copy">Body Copy</a></li>
+<li><a href="#emphasis">Emphasis</a><ul>
+<li><a href="#bold">Bold</a></li>
+<li><a href="#italics">Italics</a></li>
+<li><a href="#strikethrough">strikethrough</a></li>
+</ul></li>
+<li><a href="#blockquotes">Blockquotes</a></li>
+<li><a href="#lists">Lists</a><ul>
+<li><a href="#unordered">Unordered</a></li>
+<li><a href="#ordered">Ordered</a></li>
+</ul></li>
+<li><a href="#code">Code</a><ul>
+<li><a href="#inline-code">Inline code</a></li>
+<li><a href="#indented-code">Indented code</a></li>
+<li><a href="#block-code-fences">Block code “fences”</a></li>
+<li><a href="#syntax-highlighting">Syntax highlighting</a></li>
+</ul></li>
+<li><a href="#tables">Tables</a><ul>
+<li><a href="#right-aligned-text">Right aligned text</a></li>
+</ul></li>
+<li><a href="#links">Links</a><ul>
+<li><a href="#basic-link">Basic link</a></li>
+<li><a href="#add-a-title">Add a title</a></li>
+<li><a href="#named-anchors">Named Anchors</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#cascade-rules">Cascade Rules</a><ul>
+<li><a href="#the-cascade">The cascade</a></li>
+<li><a href="#inheritance">Inheritance</a></li>
+<li><a href="#initial-value">Initial Value</a></li>
+<li><a href="#css-rule-sorting">CSS Rule Sorting</a></li>
+<li><a href="#origin">Origin</a></li>
+<li><a href="#specificity-details">Specificity Details</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Testing out with a github markdown cheat sheet I have…</p>
+</section>
+<section id="code-example-using-github-markdown" class="level1">
+<h1>Code Example using Github Markdown</h1>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">.foo</span> <span class="kw">{</span>
+    <span class="kw">color:</span> <span class="dt">red</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">foo</span>(str) {
+    <span class="kw">return</span> str + <span class="st">&#39;...omg this is awesome!&#39;</span>;
+}</code></pre>
+</section>
+<section id="typography" class="level1">
+<h1>Typography</h1>
+<section id="headings" class="level2">
+<h2>Headings</h2>
+<p>Headings from <code>h1</code> through <code>h6</code> are constructed with a <code>#</code> for each level:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu"># h1 Heading</span>
+<span class="fu">## h2 Heading</span>
+<span class="fu">### h3 Heading</span>
+<span class="fu">#### h4 Heading</span>
+<span class="fu">##### h5 Heading</span>
+<span class="fu">###### h6 Heading</span></code></pre>
+<p>Renders to:</p>
+</section>
+</section>
+<section id="h1-heading" class="level1">
+<h1>h1 Heading</h1>
+<section id="h2-heading" class="level2">
+<h2>h2 Heading</h2>
+<section id="h3-heading" class="level3">
+<h3>h3 Heading</h3>
+<section id="h4-heading" class="level4">
+<h4>h4 Heading</h4>
+<section id="h5-heading" class="level5">
+<h5>h5 Heading</h5>
+<section id="h6-heading" class="level6">
+<h6>h6 Heading</h6>
+<p>HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;h1&gt;</span>h1 Heading<span class="kw">&lt;/h1&gt;</span>
+<span class="kw">&lt;h2&gt;</span>h2 Heading<span class="kw">&lt;/h2&gt;</span>
+<span class="kw">&lt;h3&gt;</span>h3 Heading<span class="kw">&lt;/h3&gt;</span>
+<span class="kw">&lt;h4&gt;</span>h4 Heading<span class="kw">&lt;/h4&gt;</span>
+<span class="kw">&lt;h5&gt;</span>h5 Heading<span class="kw">&lt;/h5&gt;</span>
+<span class="kw">&lt;h6&gt;</span>h6 Heading<span class="kw">&lt;/h6&gt;</span></code></pre>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="horizontal-rules" class="level2">
+<h2>Horizontal Rules</h2>
+<p>The HTML <code>&lt;hr&gt;</code> element is for creating a “thematic break” between paragraph-level elements. In markdown, you can create a <code>&lt;hr&gt;</code> with any of the following:</p>
+<ul>
+<li><code>___</code>: three consecutive underscores</li>
+<li><code>---</code>: three consecutive dashes</li>
+<li><code>***</code>: three consecutive asterisks</li>
+</ul>
+<p>renders to:</p>
+<hr />
+<hr />
+<hr />
+</section>
+<section id="body-copy" class="level2">
+<h2>Body Copy</h2>
+<p>Body copy written as normal, plain text will be wrapped with <code>&lt;p&gt;&lt;/p&gt;</code> tags in the rendered HTML.</p>
+<p>So this body copy:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</code></pre>
+<p>renders to this HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;p&gt;</span>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.<span class="kw">&lt;/p&gt;</span></code></pre>
+</section>
+<section id="emphasis" class="level2">
+<h2>Emphasis</h2>
+<section id="bold" class="level3">
+<h3>Bold</h3>
+<p>For emphasizing a snippet of text with a heavier font-weight.</p>
+<p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">**rendered as bold text**</code></pre>
+<p>renders to:</p>
+<p><strong>rendered as bold text</strong></p>
+<p>and this HTML</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;strong&gt;</span>rendered as bold text<span class="kw">&lt;/strong&gt;</span></code></pre>
+</section>
+<section id="italics" class="level3">
+<h3>Italics</h3>
+<p>For emphasizing a snippet of text with italics.</p>
+<p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">_rendered as italicized text_</code></pre>
+<p>renders to:</p>
+<p><em>rendered as italicized text</em></p>
+<p>and this HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;em&gt;</span>rendered as italicized text<span class="kw">&lt;/em&gt;</span></code></pre>
+</section>
+<section id="strikethrough" class="level3">
+<h3>strikethrough</h3>
+<p>In GFM you can do strickthroughs.</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">~~Strike through this text.~~</code></pre>
+<p>Which renders to:</p>
+<p><del>Strike through this text.</del></p>
+</section>
+</section>
+<section id="blockquotes" class="level2">
+<h2>Blockquotes</h2>
+<p>For quoting blocks of content from another source within your document.</p>
+<p>Add <code>&gt;</code> before any text you want to quote.</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">Add <span class="bn">`&gt;`</span> before any text you want to quote.</code></pre>
+<p>Renders to:</p>
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+</blockquote>
+<p>and this HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;blockquote&gt;</span>
+  <span class="kw">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/blockquote&gt;</span></code></pre>
+<p>Blockquotes can also be nested:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">&gt;<span class="dt"> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.</span>
+Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
+&gt;<span class="dt">&gt; Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor</span>
+odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
+&gt;<span class="dt">&gt;&gt; Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.</span>
+Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.</code></pre>
+<p>Renders to:</p>
+<blockquote>
+<p>Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. &gt; Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam. &gt;&gt; Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.</p>
+</blockquote>
+</section>
+<section id="lists" class="level2">
+<h2>Lists</h2>
+<section id="unordered" class="level3">
+<h3>Unordered</h3>
+<p>A list of items in which the order of the items does not explicitly matter.</p>
+<p>You may use any of the following symbols to denote bullets for each list item:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">* <span class="fl">valid bullet</span>
+- <span class="fl">valid bullet</span>
++ <span class="fl">valid bullet</span></code></pre>
+<p>For example</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">+ <span class="fl">Lorem ipsum dolor sit amet</span>
++ <span class="fl">Consectetur adipiscing elit</span>
++ <span class="fl">Integer molestie lorem at massa</span>
++ <span class="fl">Facilisis in pretium nisl aliquet</span>
++ <span class="fl">Nulla volutpat aliquam velit</span>
+  - Phasellus iaculis neque
+  - Purus sodales ultricies
+  - Vestibulum laoreet porttitor sem
+  - Ac tristique libero volutpat at
++ <span class="fl">Faucibus porta lacus fringilla vel</span>
++ <span class="fl">Aenean sit amet erat nunc</span>
++ <span class="fl">Eget porttitor lorem</span></code></pre>
+<p>Renders to:</p>
+<ul>
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit</li>
+<li>Phasellus iaculis neque</li>
+<li>Purus sodales ultricies</li>
+<li>Vestibulum laoreet porttitor sem</li>
+<li>Ac tristique libero volutpat at</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ul>
+<p>And this HTML</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;ul&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Lorem ipsum dolor sit amet<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Consectetur adipiscing elit<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Integer molestie lorem at massa<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Facilisis in pretium nisl aliquet<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Nulla volutpat aliquam velit
+    <span class="kw">&lt;ul&gt;</span>
+      <span class="kw">&lt;li&gt;</span>Phasellus iaculis neque<span class="kw">&lt;/li&gt;</span>
+      <span class="kw">&lt;li&gt;</span>Purus sodales ultricies<span class="kw">&lt;/li&gt;</span>
+      <span class="kw">&lt;li&gt;</span>Vestibulum laoreet porttitor sem<span class="kw">&lt;/li&gt;</span>
+      <span class="kw">&lt;li&gt;</span>Ac tristique libero volutpat at<span class="kw">&lt;/li&gt;</span>
+    <span class="kw">&lt;/ul&gt;</span>
+  <span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Faucibus porta lacus fringilla vel<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Aenean sit amet erat nunc<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Eget porttitor lorem<span class="kw">&lt;/li&gt;</span>
+<span class="kw">&lt;/ul&gt;</span></code></pre>
+</section>
+<section id="ordered" class="level3">
+<h3>Ordered</h3>
+<p>A list of items in which the order of items does explicitly matter.</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">Lorem ipsum dolor sit amet</span>
+2. <span class="fl">Consectetur adipiscing elit</span>
+3. <span class="fl">Integer molestie lorem at massa</span>
+4. <span class="fl">Facilisis in pretium nisl aliquet</span>
+5. <span class="fl">Nulla volutpat aliquam velit</span>
+6. <span class="fl">Faucibus porta lacus fringilla vel</span>
+7. <span class="fl">Aenean sit amet erat nunc</span>
+8. <span class="fl">Eget porttitor lorem</span></code></pre>
+<p>Renders to:</p>
+<ol type="1">
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ol>
+<p>And this HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;ol&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Lorem ipsum dolor sit amet<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Consectetur adipiscing elit<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Integer molestie lorem at massa<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Facilisis in pretium nisl aliquet<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Nulla volutpat aliquam velit<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Faucibus porta lacus fringilla vel<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Aenean sit amet erat nunc<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Eget porttitor lorem<span class="kw">&lt;/li&gt;</span>
+<span class="kw">&lt;/ol&gt;</span></code></pre>
+<p><strong>TIP</strong>: If you just use <code>1.</code> for each number, GitHub will automatically number each item. For example:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">Lorem ipsum dolor sit amet</span>
+1. <span class="fl">Consectetur adipiscing elit</span>
+1. <span class="fl">Integer molestie lorem at massa</span>
+1. <span class="fl">Facilisis in pretium nisl aliquet</span>
+1. <span class="fl">Nulla volutpat aliquam velit</span>
+1. <span class="fl">Faucibus porta lacus fringilla vel</span>
+1. <span class="fl">Aenean sit amet erat nunc</span>
+1. <span class="fl">Eget porttitor lorem</span></code></pre>
+<p>Renders to:</p>
+<ol type="1">
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ol>
+</section>
+</section>
+<section id="code" class="level2">
+<h2>Code</h2>
+<section id="inline-code" class="level3">
+<h3>Inline code</h3>
+<p>Wrap inline snippets of code with <code>`</code>.</p>
+<p>For example, <code>&lt;section&gt;&lt;/section&gt;</code> should be wrapped as “inline”.</p>
+<pre class="sourceCode html"><code class="sourceCode html">For example, `<span class="kw">&lt;section&gt;&lt;/section&gt;</span>` should be wrapped as &quot;inline&quot;.</code></pre>
+</section>
+<section id="indented-code" class="level3">
+<h3>Indented code</h3>
+<p>Or indent several lines of code by at least four spaces, as in:</p>
+<pre class="js"><code>    // Some comments
+    line 1 of code
+    line 2 of code
+    line 3 of code</code></pre>
+<pre><code>// Some comments
+line 1 of code
+line 2 of code
+line 3 of code</code></pre>
+</section>
+<section id="block-code-fences" class="level3">
+<h3>Block code “fences”</h3>
+<p>Use “fences” <code>```</code> to block in multiple lines of code.</p>
+<pre>
+``` html
+Sample text here...
+```
+</pre>
+<pre><code>Sample text here...</code></pre>
+<p>HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;pre&gt;</span>
+  <span class="kw">&lt;p&gt;</span>Sample text here...<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/pre&gt;</span></code></pre>
+</section>
+<section id="syntax-highlighting" class="level3">
+<h3>Syntax highlighting</h3>
+<p>GFM, or “GitHub Flavored Markdown” also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first code “fence”, <code>``` js</code>, and syntax highlighting will automatically be applied in the rendered HTML. For example, to apply syntax highlighting to JavaScript code:</p>
+<pre>
+``` javascript
+grunt.initConfig({
+  assemble: {
+    options: {
+      assets: 'docs/assets',
+      data: 'src/data/*.{json,yml}',
+      helpers: 'src/custom-helpers.js',
+      partials: ['src/partials/**/*.{hbs,md}']
+    },
+    pages: {
+      options: {
+        layout: 'default.hbs'
+      },
+      files: {
+        './': ['src/templates/pages/index.hbs']
+      }
+    }
+  }
+};
+```
+</pre>
+<p>Renders to:</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">grunt</span>.<span class="fu">initConfig</span>({
+  <span class="dt">assemble</span>: {
+    <span class="dt">options</span>: {
+      <span class="dt">assets</span>: <span class="st">&#39;docs/assets&#39;</span>,
+      <span class="dt">data</span>: <span class="st">&#39;src/data/*.{json,yml}&#39;</span>,
+      <span class="dt">helpers</span>: <span class="st">&#39;src/custom-helpers.js&#39;</span>,
+      <span class="dt">partials</span>: [<span class="st">&#39;src/partials/**/*.{hbs,md}&#39;</span>]
+    },
+    <span class="dt">pages</span>: {
+      <span class="dt">options</span>: {
+        <span class="dt">layout</span>: <span class="st">&#39;default.hbs&#39;</span>
+      },
+      <span class="dt">files</span>: {
+        <span class="st">&#39;./&#39;</span>: [<span class="st">&#39;src/templates/pages/index.hbs&#39;</span>]
+      }
+    }
+  }
+};</code></pre>
+<p>And this complicated HTML:</p>
+<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;highlight&quot;</span><span class="kw">&gt;&lt;pre&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>grunt<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>.<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>initConfig<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>({<span class="kw">&lt;/span&gt;</span>
+  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>assemble<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>{<span class="kw">&lt;/span&gt;</span>
+    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>options<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>{<span class="kw">&lt;/span&gt;</span>
+      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>assets<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;docs/assets&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>,<span class="kw">&lt;/span&gt;</span>
+      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>data<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;src/data/*.{json,yml}&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>,<span class="kw">&lt;/span&gt;</span>
+      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>helpers<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;src/custom-helpers.js&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>,<span class="kw">&lt;/span&gt;</span>
+      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>partials<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>[<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;src/partials/**/*.{hbs,md}&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>]<span class="kw">&lt;/span&gt;</span>
+    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>},<span class="kw">&lt;/span&gt;</span>
+    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>pages<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>{<span class="kw">&lt;/span&gt;</span>
+      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>options<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>{<span class="kw">&lt;/span&gt;</span>
+        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>layout<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;default.hbs&#39;<span class="kw">&lt;/span&gt;</span>
+      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>},<span class="kw">&lt;/span&gt;</span>
+      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>files<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>{<span class="kw">&lt;/span&gt;</span>
+        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;./&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>[<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;src/templates/pages/index.hbs&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>]<span class="kw">&lt;/span&gt;</span>
+      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>}<span class="kw">&lt;/span&gt;</span>
+    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>}<span class="kw">&lt;/span&gt;</span>
+  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>}<span class="kw">&lt;/span&gt;</span>
+<span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>};<span class="kw">&lt;/span&gt;</span>
+<span class="kw">&lt;/pre&gt;&lt;/div&gt;</span></code></pre>
+</section>
+</section>
+<section id="tables" class="level2">
+<h2>Tables</h2>
+<p>Tables are created by adding pipes as dividers between each cell, and by adding a line of dashes (also separated by bars) beneath the header. Note that the pipes do not need to be vertically aligned.</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |</code></pre>
+<p>Renders to:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">data</td>
+<td style="text-align: left;">path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">engine</td>
+<td style="text-align: left;">engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ext</td>
+<td style="text-align: left;">extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<p>And this HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;table&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;th&gt;</span>Option<span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;th&gt;</span>Description<span class="kw">&lt;/th&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;td&gt;</span>data<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;td&gt;</span>path to data files to supply the data that will be passed into templates.<span class="kw">&lt;/td&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;td&gt;</span>engine<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;td&gt;</span>engine to be used for processing templates. Handlebars is the default.<span class="kw">&lt;/td&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;td&gt;</span>ext<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;td&gt;</span>extension to be used for dest files.<span class="kw">&lt;/td&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+<span class="kw">&lt;/table&gt;</span></code></pre>
+<section id="right-aligned-text" class="level3">
+<h3>Right aligned text</h3>
+<p>Adding a colon on the right side of the dashes below any heading will right align text for that column.</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Option</th>
+<th style="text-align: right;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">data</td>
+<td style="text-align: right;">path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">engine</td>
+<td style="text-align: right;">engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">ext</td>
+<td style="text-align: right;">extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="links" class="level2">
+<h2>Links</h2>
+<section id="basic-link" class="level3">
+<h3>Basic link</h3>
+<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="ot">[Assemble](http://assemble.io)</span></code></pre>
+<p>Renders to (hover over the link, there is no tooltip):</p>
+<p><a href="http://assemble.io">Assemble</a></p>
+<p>HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://assemble.io&quot;</span><span class="kw">&gt;</span>Assemble<span class="kw">&lt;/a&gt;</span></code></pre>
+</section>
+<section id="add-a-title" class="level3">
+<h3>Add a title</h3>
+<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="ot">[Upstage](https://github.com/upstage/ &quot;Visit Upstage!&quot;)</span></code></pre>
+<p>Renders to (hover over the link, there should be a tooltip):</p>
+<p><a href="https://github.com/upstage/" title="Visit Upstage!">Upstage</a></p>
+<p>HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;https://github.com/upstage/&quot;</span><span class="ot"> title=</span><span class="st">&quot;Visit Upstage!&quot;</span><span class="kw">&gt;</span>Upstage<span class="kw">&lt;/a&gt;</span></code></pre>
+</section>
+<section id="named-anchors" class="level3">
+<h3>Named Anchors</h3>
+<p>Named anchors enable you to jump to the specified anchor point on the same page. For example, each of these chapters:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu"># Table of Contents</span>
+  * <span class="ot">[Chapter 1](#chapter-1)</span>
+  * <span class="ot">[Chapter 2](#chapter-2)</span>
+  * <span class="ot">[Chapter 3](#chapter-3)</span></code></pre>
+<p>will jump to these sections:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu">## Chapter 1 &lt;a id=&quot;chapter-1&quot;&gt;&lt;/a&gt;</span>
+Content for chapter one.
+
+<span class="fu">## Chapter 2 &lt;a id=&quot;chapter-2&quot;&gt;&lt;/a&gt;</span>
+Content for chapter one.
+
+<span class="fu">## Chapter 3 &lt;a id=&quot;chapter-3&quot;&gt;&lt;/a&gt;</span>
+Content for chapter one.</code></pre>
+<p><strong>NOTE</strong> that specific placement of the anchor tag seems to be arbitrary. They are placed inline here since it seems to be unobtrusive, and it works.</p>
+</section>
+</section>
+</section>
+<section id="cascade-rules" class="level1">
+<h1>Cascade Rules</h1>
+<p>This chapter will discuss how the browser determines which style rule to apply to an element. It seems that are many resources that talk about individual components of this determination such as specificity, cascade, etc., in isolation. I feel this is a huge mistake and leaves developers confused as to how things actually work. In fact, the spec’s chapter that speaks to the way this is worked out is <a href="http://www.w3.org/TR/CSS2/cascade.html">fairly short</a> and worth a glance. Let’s take a look at the way a browser determines which rule “wins”…</p>
+<p>We’ll take the approach of annotating parts of this spec so we’re confident in how this all works. Let’s start with __specified values_:</p>
+<blockquote>
+<p>6.1.1 Specified values</p>
+<p>User agents must first assign a specified value to each property based on the following mechanisms (in order of precedence):</p>
+<p>If the cascade results in a value, use it. Otherwise, if the property is inherited and the element is not the root of the document tree, use the computed value of the parent element. Otherwise use the property’s initial value. The initial value of each property is indicated in the property’s definition.</p>
+</blockquote>
+<p>So this leads us to ask, “What exactly are these things: <em>cascade</em>, <em>inheritance</em>, and what’s a property’s <em>initial value</em>?</p>
+<section id="the-cascade" class="level3">
+<h3>The cascade</h3>
+<blockquote>
+<p>Style sheets may have three different origins: author, user, and user agent.</p>
+</blockquote>
+<p>We’ll go deeper, but for now, just think of the <em>cascade</em> as the ordering of the various types of stylesheets that need to be evaluated. As rule 6.1.1 above states, the cascade gets the most weight in the decision of which rule to apply to an element.</p>
+</section>
+<section id="inheritance" class="level3">
+<h3>Inheritance</h3>
+<blockquote>
+<p>When inheritance occurs, elements inherit computed values. The computed value from the parent element becomes both the specified value and the computed value on the child.</p>
+</blockquote>
+<p>Note that some types of CSS properties are inherited, others are not. <a href="http://www.w3.org/TR/CSS2/propidx.html">See a table</a>, but, for example, <code>color</code> is inherited while <code>display</code> or <code>border</code> are not. As you notice from 6.1.1, this factor takes second place in terms of precedence. Also, the specificity of an inherited rule is “nada”. We’ll look at how that gets taken in to account in a bit.</p>
+</section>
+<section id="initial-value" class="level3">
+<h3>Initial Value</h3>
+<p><a href="http://reference.sitepoint.com/css/defaultvalues">Sitepoint</a> provides a great overview of how initial values work:</p>
+<blockquote>
+<p>The default value for a property, when it’s not specified explicitly or inherited, is called the initial value. The initial value of each property is defined in the CSS specification.</p>
+</blockquote>
+<blockquote>
+<p>Browsers have user agent style sheets that define the default rendering of the various HTML element types. In some cases, the rules in those built-in style sheets define values other than the initial values from the CSS specification. For example, links are usually underlined, even though the initial value for the text-decoration property is none.</p>
+</blockquote>
+<p>Further, as we saw in 6.1.1, initial value comes after the cascade and inheritance in terms of precedence.</p>
+</section>
+<section id="css-rule-sorting" class="level2">
+<h2>CSS Rule Sorting</h2>
+<p>Before we dive in to the details of things <em>specificity</em>, <em>inheritance</em>, etc., let’s attempt to get a broader overview of just how the browser determines which rule to apply for a given element. It’s, essentially, a four-step process:</p>
+<ol type="1">
+<li><strong>Gather Qualified Declarations:</strong> First gather all declarations that apply to the element for the current medium (such as <em>screen</em>, <em>print</em>, etc.) Pass all matches through to the next part of the sorting algorthm</li>
+<li><strong>Sort by Origin:</strong> In this level of sorting, sort by stylesheet origin in ascending order of precedence which <a href="http://www.w3.org/TR/CSS2/cascade.html#cascading-order">the spec</a> as:</li>
+</ol>
+<ul>
+<li>user agent declarations</li>
+<li>user normal declarations</li>
+<li>author normal declarations</li>
+<li>author important declarations</li>
+<li>user important declarations (intuitevly we can see that, in order to provide accessibility, user’s with special requirements are given a final and most prioritized mechanism)</li>
+</ul>
+<p><em>The term <strong>weight</strong> is sometimes used to describe the priority provided given the above considerations</em></p>
+<ol start="3" type="1">
+<li><strong>Sort by Specificity:</strong> If, and only if, the above sort results in rules having duplicate importance and origin, than, sort by the specificity of selector</li>
+<li><strong>Sort by Order of Declaration:</strong> If, and only if, the competing declarations have the same weight and specificity, than sort by order specified (where the latter specified wins).</li>
+</ol>
+<p>One reason why we describe these broader rules here, is that it’s important to understand that <strong>weight</strong>, or, <em>sort by origin</em>, will always “beat out” <strong>specificity</strong>. Put differently, it doesn’t matter how much more specific one rule is over another if they aren’t deemed to have the same origin/weight. Not understanding this fact can lead to confusing results. That said, most of the time we are, in fact, “competing with ourselves” as author stylesheets are generally carry the most weight (<code>!important</code> rules notwithstanding).</p>
+<p>If you’d like a visual presentation of how the cascade rules are applied you may want to check out Russ Weakley’s excellent <a href="http://www.slideshare.net/maxdesign/css-cascade-1658158">CSS Cascade Slideshare</a> chock full of extremely useful examples.</p>
+</section>
+<section id="origin" class="level2">
+<h2>Origin</h2>
+<p>TBD</p>
+</section>
+<section id="specificity-details" class="level2">
+<h2>Specificity Details</h2>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<p><a href="http://shop.oreilly.com/product/9780596802455.do">CSS: The Missing Manual:</a> <a href="http://shop.oreilly.com/product/9780596527334.do">CSS: The Definitive Guide, 3rd Edition:</a> <a href="http://www.w3.org/TR/CSS2/cascade.html">CSS 2.1 Spec:</a></p>
+<p>http://css-tricks.com/specifics-on-css-specificity/ http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/</p>
+</section>
+<script type="text/javascript">
+/*
+TODO
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'TODO-PUT-GA-ACOUNT-HERE']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+</script>
+</body>
+</html>
