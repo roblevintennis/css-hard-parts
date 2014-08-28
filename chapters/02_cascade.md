@@ -260,9 +260,9 @@ Once you've got your print styles looking the way you want, you'd simply switch 
 
 ## Resources
 
-If you'd like a visual presentation of how the cascade rules are applied you may want to check out Russ Weakley's excellent [CSS Cascade Slideshare](http://www.slideshare.net/maxdesign/css-cascade-1658158) chock full of extremely useful examples.
+[CSS 2.1 Cascade Spec](http://www.w3.org/TR/CSS2/cascade.html)
 
-[CSS 2.1 Spec](http://www.w3.org/TR/CSS2/cascade.html)
+[CSS3 Cascade Spec](http://www.w3.org/TR/css3-cascade/#changes-2013)
 
 [CSS: The Missing Manual](http://shop.oreilly.com/product/9780596802455.do)
 
@@ -270,3 +270,4 @@ If you'd like a visual presentation of how the cascade rules are applied you may
 
 [Smashing CSS: Professional Techniques for Modern Layout](http://meyerweb.com/eric/books/smashing/)
 
+If you'd like a visual presentation of how the cascade rules are applied you may want to check out Russ Weakley's excellent [CSS Cascade Slideshare](http://www.slideshare.net/maxdesign/css-cascade-1658158) chock full of extremely useful examples.
