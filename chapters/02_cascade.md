@@ -186,7 +186,7 @@ I've shown you earlier that origin is considered before specificity, but I have 
 
 ### Calculating Specificity
 
-In order to determine how two or more conflicting style rules will get resolved (providing they have the same *weight*), the browser uses a sort of &ldquo;scoring system&rdqou; called [specificity](http://www.w3.org/TR/CSS2/cascade.html#specificity). The main idea is that rules with a higher specificity will take precedence over those with a lower specificity.
+In order to determine how two or more conflicting style rules will get resolved (providing they have the same *weight*), the browser uses a sort of &ldquo;scoring system&rdquo; called [specificity](http://www.w3.org/TR/CSS2/cascade.html#specificity). The main idea is that rules with a higher specificity will take precedence over those with a lower specificity.
 
 Specificity is calculated as a four digit comma delimited number where each number can be labeled from left to right as: 'a', 'b', 'c', 'd'.
 
@@ -208,11 +208,11 @@ To gather the total specificity we simply concatenate those four numbers. Here a
  li.red.level  {}  /* a=0 b=0 c=2 d=1 -> specificity = 0,0,2,1 */
  #x34y         {}  /* a=0 b=1 c=0 d=0 -> specificity = 0,1,0,0 */
  style=""          /* a=1 b=0 c=0 d=0 -> specificity = 1,0,0,0 */
- ```
+```
 
  Let's take a look at a few more examples from within a simple html page:
 
- ```html
+```html
 <head>
 <style type="text/css">
 body { color: blue; }
@@ -225,18 +225,19 @@ body { color: blue; }
 </body>
 ```
 
-In this example, we have two defined style rules for `body` and `#abc`. The body rule has a specificity of `0001` and the `#abc` has a specificity of `0100`. The ID clearly &rdquo;wins&ldquo;. The `h1` has an inline style and will thus calculate to `1000`.
+In this example, we have two defined style rules for `body` and `#abc`. The body rule has a specificity of `0001` and the `#abc` has a specificity of `0100`. The ID clearly &ldquo;wins&rdquo;. The `h1` has an inline style and will thus calculate to `1000`.
 
 Let's look at one more fairly complex selector:
 ```css
-#foo > #bar ul.klass li p:first-line {}  /* a=0 b=2 c=1 d=4 -> specificity = 0,2,1,4 */
- ```
+#foo > #bar ul.klass li p:first-line {}
+/* a=0 b=2 c=1 d=4 -> specificity = 0,2,1,4 */
+```
 * No inline `style` so a=0
 * Two IDs, `#foo` and `#bar` so b=2
-* One class `.klass so c=1
+* One class `.klass` so c=1
 * Three elements `ul`, `li`, and `p`, as well as one pseudo-element `:first-line` so d=4
 
-Selector syntax is out of the scope for this book, but you can find the general rules for [selectors here].
+Selector syntax is out of the scope for this book, but you can find the general rules for [selectors here](http://www.w3.org/TR/css3-selectors/#selectors).
 
 ##Media
 
@@ -257,7 +258,7 @@ Eric Meyer provides a wonderful trick for debugging stylesheets in his book [Sma
 
 Once you've got your print styles looking the way you want, you'd simply switch `styles.css` to point to `media="screen"`, and `print.css` to point to `media="print"`. Neat trick, huh!
 
-## References
+## Resources
 
 If you'd like a visual presentation of how the cascade rules are applied you may want to check out Russ Weakley's excellent [CSS Cascade Slideshare](http://www.slideshare.net/maxdesign/css-cascade-1658158) chock full of extremely useful examples.
 

@@ -139,7 +139,7 @@ spec on value-stages
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Specificity Details\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 I\u8217've shown you earlier that origin is considered before specificity, but I have a confession to make\u8230?page authors generally only need to worry about specificity since, as stated, the author stylesheet gets the most weight.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Calculating Specificity\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 In order to determine how two or more conflicting style rules will get resolved (providing they have the same {\i weight}), the browser uses a sort of \u8220"scoring system&rdqou; called {\field{\*\fldinst{HYPERLINK "http://www.w3.org/TR/CSS2/cascade.html#specificity"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 In order to determine how two or more conflicting style rules will get resolved (providing they have the same {\i weight}), the browser uses a sort of \u8220"scoring system\u8221" called {\field{\*\fldinst{HYPERLINK "http://www.w3.org/TR/CSS2/cascade.html#specificity"}}{\fldrslt{\ul
 specificity
 }}}
 . The main idea is that rules with a higher specificity will take precedence over those with a lower specificity.\par}
@@ -161,13 +161,9 @@ spec
  ul ol li.red  \{\}  /* a=0 b=0 c=1 d=3 -> specificity = 0,0,1,3 */\line
  li.red.level  \{\}  /* a=0 b=0 c=2 d=1 -> specificity = 0,0,2,1 */\line
  #x34y         \{\}  /* a=0 b=1 c=0 d=0 -> specificity = 0,1,0,0 */\line
- style=""          /* a=1 b=0 c=0 d=0 -> specificity = 1,0,0,0 */\line
- ```\line
-\line
- Let's take a look at a few more examples from within a simple html page:\line
-\line
- ```html\line
-<head>\line
+ style=""          /* a=1 b=0 c=0 d=0 -> specificity = 1,0,0,0 */\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Let\u8217's take a look at a few more examples from within a simple html page:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 <head>\line
 <style type="text/css">\line
 body \{ color: blue; \}\line
 #abc \{ color: red;  \}\line
@@ -177,9 +173,18 @@ body \{ color: blue; \}\line
   <p id="abc">I have and ID so I will render red</p>\line
   <h1 style="color: green">I have an inline style and render green</h1>\line
 </body>\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 In this example, we have two defined style rules for {\f1 body} and {\f1 #abc}. The body rule has a specificity of {\f1 0001} and the {\f1 #abc} has a specificity of {\f1 0100}. The ID clearly \u8221"wins\u8220". The {\f1 h1} has an inline style and will thus calculate to {\f1 1000}.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Let\u8217's look at one more fairly complex selector: {\f1 css #foo > #bar ul.klass li p:first-line \{\}  /* a=0 b=2 c=1 d=4 -> specificity = 0,2,1,4 */} * No inline {\f1 style} so a=0 * Two IDs, {\f1 #foo} and {\f1 #bar} so b=2 * One class {\f1 .klass so c=1 * Three elements}ul{\f1 ,}li{\f1 , and}p{\f1 , as well as one pseudo-element}:first-line` so d=4\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Selector syntax is out of the scope for this book, but you can find the general rules for [selectors here].\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 In this example, we have two defined style rules for {\f1 body} and {\f1 #abc}. The body rule has a specificity of {\f1 0001} and the {\f1 #abc} has a specificity of {\f1 0100}. The ID clearly \u8220"wins\u8221". The {\f1 h1} has an inline style and will thus calculate to {\f1 1000}.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Let\u8217's look at one more fairly complex selector:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 #foo > #bar ul.klass li p:first-line \{\}\line
+/* a=0 b=2 c=1 d=4 -> specificity = 0,2,1,4 */\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab No inline {\f1 style} so a=0\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Two IDs, {\f1 #foo} and {\f1 #bar} so b=2\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab One class {\f1 .klass} so c=1\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Three elements {\f1 ul}, {\f1 li}, and {\f1 p}, as well as one pseudo-element {\f1 :first-line} so d=4\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Selector syntax is out of the scope for this book, but you can find the general rules for {\field{\*\fldinst{HYPERLINK "http://www.w3.org/TR/css3-selectors/#selectors"}}{\fldrslt{\ul
+selectors here
+}}}
+.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Media\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 As mentioned earlier, the first step in evaluating the cascade, is to gather all relevent rules that apply for the current medium. This can be a factor when you\u8217're web site or application targets more than one medium. We\u8217'll take on print as that\u8217's a common use case.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Print Media\par}
@@ -192,7 +197,7 @@ Smashing CSS: Professional Techniques for Modern Layout
 {\pard \ql \f0 \sa180 \li0 \fi0 \f1 <link rel="stylesheet" type="text/css" href="styles.css" media="tv">\line
 <link rel="stylesheet" type="text/css" href="print.css" media="screen">\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Once you\u8217've got your print styles looking the way you want, you\u8217'd simply switch {\f1 styles.css} to point to {\f1 media="screen"}, and {\f1 print.css} to point to {\f1 media="print"}. Neat trick, huh!\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 References\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Resources\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 If you\u8217'd like a visual presentation of how the cascade rules are applied you may want to check out Russ Weakley\u8217's excellent {\field{\*\fldinst{HYPERLINK "http://www.slideshare.net/maxdesign/css-cascade-1658158"}}{\fldrslt{\ul
 CSS Cascade Slideshare
 }}}
