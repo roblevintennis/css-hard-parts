@@ -38,580 +38,241 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </header>
 <nav id="TOC">
 <ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#code-example-using-github-markdown">Code Example using Github Markdown</a></li>
-<li><a href="#typography">Typography</a><ul>
-<li><a href="#headings">Headings</a></li>
-</ul></li>
-<li><a href="#h1-heading">h1 Heading</a><ul>
-<li><a href="#h2-heading">h2 Heading</a><ul>
-<li><a href="#h3-heading">h3 Heading</a></li>
-</ul></li>
-<li><a href="#horizontal-rules">Horizontal Rules</a></li>
-<li><a href="#body-copy">Body Copy</a></li>
-<li><a href="#emphasis">Emphasis</a><ul>
-<li><a href="#bold">Bold</a></li>
-<li><a href="#italics">Italics</a></li>
-<li><a href="#strikethrough">strikethrough</a></li>
-</ul></li>
-<li><a href="#blockquotes">Blockquotes</a></li>
-<li><a href="#lists">Lists</a><ul>
-<li><a href="#unordered">Unordered</a></li>
-<li><a href="#ordered">Ordered</a></li>
-</ul></li>
-<li><a href="#code">Code</a><ul>
-<li><a href="#inline-code">Inline code</a></li>
-<li><a href="#indented-code">Indented code</a></li>
-<li><a href="#block-code-fences">Block code “fences”</a></li>
-<li><a href="#syntax-highlighting">Syntax highlighting</a></li>
-</ul></li>
-<li><a href="#tables">Tables</a><ul>
-<li><a href="#right-aligned-text">Right aligned text</a></li>
-</ul></li>
-<li><a href="#links">Links</a><ul>
-<li><a href="#basic-link">Basic link</a></li>
-<li><a href="#add-a-title">Add a title</a></li>
-<li><a href="#named-anchors">Named Anchors</a></li>
-</ul></li>
-</ul></li>
 <li><a href="#cascade-rules">Cascade Rules</a><ul>
-<li><a href="#the-cascade">The cascade</a></li>
-<li><a href="#inheritance">Inheritance</a></li>
-<li><a href="#initial-value">Initial Value</a></li>
 <li><a href="#css-rule-sorting">CSS Rule Sorting</a></li>
 <li><a href="#origin">Origin</a></li>
-<li><a href="#specificity-details">Specificity Details</a></li>
+<li><a href="#weight-beats-specificity">Weight Beats Specificity</a></li>
+<li><a href="#styles-that-stick">Styles That Stick</a><ul>
+<li><a href="#inheritance">Inheritance</a></li>
+<li><a href="#initial-value">Initial Value</a></li>
+</ul></li>
+<li><a href="#rule-evaluation">Rule Evaluation</a></li>
+<li><a href="#take-a-deep-breath">Take a Deep Breath</a></li>
+<li><a href="#specificity-details">Specificity Details</a><ul>
+<li><a href="#calculating-specificity">Calculating Specificity</a></li>
+</ul></li>
+<li><a href="#media">Media</a><ul>
+<li><a href="#print-media">Print Media</a></li>
+<li><a href="#debugging-print-styles">Debugging Print Styles</a></li>
 </ul></li>
 <li><a href="#references">References</a></li>
+</ul></li>
 </ul>
 </nav>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>Testing out with a github markdown cheat sheet I have…</p>
-</section>
-<section id="code-example-using-github-markdown" class="level1">
-<h1>Code Example using Github Markdown</h1>
-<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">.foo</span> <span class="kw">{</span>
-    <span class="kw">color:</span> <span class="dt">red</span><span class="kw">;</span>
-<span class="kw">}</span></code></pre>
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">foo</span>(str) {
-    <span class="kw">return</span> str + <span class="st">&#39;...omg this is awesome!&#39;</span>;
-}</code></pre>
-</section>
-<section id="typography" class="level1">
-<h1>Typography</h1>
-<section id="headings" class="level2">
-<h2>Headings</h2>
-<p>Headings from <code>h1</code> through <code>h6</code> are constructed with a <code>#</code> for each level:</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu"># h1 Heading</span>
-<span class="fu">## h2 Heading</span>
-<span class="fu">### h3 Heading</span>
-<span class="fu">#### h4 Heading</span>
-<span class="fu">##### h5 Heading</span>
-<span class="fu">###### h6 Heading</span></code></pre>
-<p>Renders to:</p>
-</section>
-</section>
-<section id="h1-heading" class="level1">
-<h1>h1 Heading</h1>
-<section id="h2-heading" class="level2">
-<h2>h2 Heading</h2>
-<section id="h3-heading" class="level3">
-<h3>h3 Heading</h3>
-<section id="h4-heading" class="level4">
-<h4>h4 Heading</h4>
-<section id="h5-heading" class="level5">
-<h5>h5 Heading</h5>
-<section id="h6-heading" class="level6">
-<h6>h6 Heading</h6>
-<p>HTML:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;h1&gt;</span>h1 Heading<span class="kw">&lt;/h1&gt;</span>
-<span class="kw">&lt;h2&gt;</span>h2 Heading<span class="kw">&lt;/h2&gt;</span>
-<span class="kw">&lt;h3&gt;</span>h3 Heading<span class="kw">&lt;/h3&gt;</span>
-<span class="kw">&lt;h4&gt;</span>h4 Heading<span class="kw">&lt;/h4&gt;</span>
-<span class="kw">&lt;h5&gt;</span>h5 Heading<span class="kw">&lt;/h5&gt;</span>
-<span class="kw">&lt;h6&gt;</span>h6 Heading<span class="kw">&lt;/h6&gt;</span></code></pre>
-</section>
-</section>
-</section>
-</section>
-</section>
-<section id="horizontal-rules" class="level2">
-<h2>Horizontal Rules</h2>
-<p>The HTML <code>&lt;hr&gt;</code> element is for creating a “thematic break” between paragraph-level elements. In markdown, you can create a <code>&lt;hr&gt;</code> with any of the following:</p>
-<ul>
-<li><code>___</code>: three consecutive underscores</li>
-<li><code>---</code>: three consecutive dashes</li>
-<li><code>***</code>: three consecutive asterisks</li>
-</ul>
-<p>renders to:</p>
-<hr />
-<hr />
-<hr />
-</section>
-<section id="body-copy" class="level2">
-<h2>Body Copy</h2>
-<p>Body copy written as normal, plain text will be wrapped with <code>&lt;p&gt;&lt;/p&gt;</code> tags in the rendered HTML.</p>
-<p>So this body copy:</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</code></pre>
-<p>renders to this HTML:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;p&gt;</span>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.<span class="kw">&lt;/p&gt;</span></code></pre>
-</section>
-<section id="emphasis" class="level2">
-<h2>Emphasis</h2>
-<section id="bold" class="level3">
-<h3>Bold</h3>
-<p>For emphasizing a snippet of text with a heavier font-weight.</p>
-<p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">**rendered as bold text**</code></pre>
-<p>renders to:</p>
-<p><strong>rendered as bold text</strong></p>
-<p>and this HTML</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;strong&gt;</span>rendered as bold text<span class="kw">&lt;/strong&gt;</span></code></pre>
-</section>
-<section id="italics" class="level3">
-<h3>Italics</h3>
-<p>For emphasizing a snippet of text with italics.</p>
-<p>The following snippet of text is <em>rendered as italicized text</em>.</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">_rendered as italicized text_</code></pre>
-<p>renders to:</p>
-<p><em>rendered as italicized text</em></p>
-<p>and this HTML:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;em&gt;</span>rendered as italicized text<span class="kw">&lt;/em&gt;</span></code></pre>
-</section>
-<section id="strikethrough" class="level3">
-<h3>strikethrough</h3>
-<p>In GFM you can do strickthroughs.</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">~~Strike through this text.~~</code></pre>
-<p>Which renders to:</p>
-<p><del>Strike through this text.</del></p>
-</section>
-</section>
-<section id="blockquotes" class="level2">
-<h2>Blockquotes</h2>
-<p>For quoting blocks of content from another source within your document.</p>
-<p>Add <code>&gt;</code> before any text you want to quote.</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">Add <span class="bn">`&gt;`</span> before any text you want to quote.</code></pre>
-<p>Renders to:</p>
-<blockquote>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-</blockquote>
-<p>and this HTML:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;blockquote&gt;</span>
-  <span class="kw">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.<span class="kw">&lt;/p&gt;</span>
-<span class="kw">&lt;/blockquote&gt;</span></code></pre>
-<p>Blockquotes can also be nested:</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">&gt;<span class="dt"> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.</span>
-Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
-&gt;<span class="dt">&gt; Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor</span>
-odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
-&gt;<span class="dt">&gt;&gt; Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.</span>
-Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.</code></pre>
-<p>Renders to:</p>
-<blockquote>
-<p>Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. &gt; Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam. &gt;&gt; Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.</p>
-</blockquote>
-</section>
-<section id="lists" class="level2">
-<h2>Lists</h2>
-<section id="unordered" class="level3">
-<h3>Unordered</h3>
-<p>A list of items in which the order of the items does not explicitly matter.</p>
-<p>You may use any of the following symbols to denote bullets for each list item:</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">* <span class="fl">valid bullet</span>
-- <span class="fl">valid bullet</span>
-+ <span class="fl">valid bullet</span></code></pre>
-<p>For example</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">+ <span class="fl">Lorem ipsum dolor sit amet</span>
-+ <span class="fl">Consectetur adipiscing elit</span>
-+ <span class="fl">Integer molestie lorem at massa</span>
-+ <span class="fl">Facilisis in pretium nisl aliquet</span>
-+ <span class="fl">Nulla volutpat aliquam velit</span>
-  - Phasellus iaculis neque
-  - Purus sodales ultricies
-  - Vestibulum laoreet porttitor sem
-  - Ac tristique libero volutpat at
-+ <span class="fl">Faucibus porta lacus fringilla vel</span>
-+ <span class="fl">Aenean sit amet erat nunc</span>
-+ <span class="fl">Eget porttitor lorem</span></code></pre>
-<p>Renders to:</p>
-<ul>
-<li>Lorem ipsum dolor sit amet</li>
-<li>Consectetur adipiscing elit</li>
-<li>Integer molestie lorem at massa</li>
-<li>Facilisis in pretium nisl aliquet</li>
-<li>Nulla volutpat aliquam velit</li>
-<li>Phasellus iaculis neque</li>
-<li>Purus sodales ultricies</li>
-<li>Vestibulum laoreet porttitor sem</li>
-<li>Ac tristique libero volutpat at</li>
-<li>Faucibus porta lacus fringilla vel</li>
-<li>Aenean sit amet erat nunc</li>
-<li>Eget porttitor lorem</li>
-</ul>
-<p>And this HTML</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;ul&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Lorem ipsum dolor sit amet<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Consectetur adipiscing elit<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Integer molestie lorem at massa<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Facilisis in pretium nisl aliquet<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Nulla volutpat aliquam velit
-    <span class="kw">&lt;ul&gt;</span>
-      <span class="kw">&lt;li&gt;</span>Phasellus iaculis neque<span class="kw">&lt;/li&gt;</span>
-      <span class="kw">&lt;li&gt;</span>Purus sodales ultricies<span class="kw">&lt;/li&gt;</span>
-      <span class="kw">&lt;li&gt;</span>Vestibulum laoreet porttitor sem<span class="kw">&lt;/li&gt;</span>
-      <span class="kw">&lt;li&gt;</span>Ac tristique libero volutpat at<span class="kw">&lt;/li&gt;</span>
-    <span class="kw">&lt;/ul&gt;</span>
-  <span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Faucibus porta lacus fringilla vel<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Aenean sit amet erat nunc<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Eget porttitor lorem<span class="kw">&lt;/li&gt;</span>
-<span class="kw">&lt;/ul&gt;</span></code></pre>
-</section>
-<section id="ordered" class="level3">
-<h3>Ordered</h3>
-<p>A list of items in which the order of items does explicitly matter.</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">Lorem ipsum dolor sit amet</span>
-2. <span class="fl">Consectetur adipiscing elit</span>
-3. <span class="fl">Integer molestie lorem at massa</span>
-4. <span class="fl">Facilisis in pretium nisl aliquet</span>
-5. <span class="fl">Nulla volutpat aliquam velit</span>
-6. <span class="fl">Faucibus porta lacus fringilla vel</span>
-7. <span class="fl">Aenean sit amet erat nunc</span>
-8. <span class="fl">Eget porttitor lorem</span></code></pre>
-<p>Renders to:</p>
-<ol type="1">
-<li>Lorem ipsum dolor sit amet</li>
-<li>Consectetur adipiscing elit</li>
-<li>Integer molestie lorem at massa</li>
-<li>Facilisis in pretium nisl aliquet</li>
-<li>Nulla volutpat aliquam velit</li>
-<li>Faucibus porta lacus fringilla vel</li>
-<li>Aenean sit amet erat nunc</li>
-<li>Eget porttitor lorem</li>
-</ol>
-<p>And this HTML:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;ol&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Lorem ipsum dolor sit amet<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Consectetur adipiscing elit<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Integer molestie lorem at massa<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Facilisis in pretium nisl aliquet<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Nulla volutpat aliquam velit<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Faucibus porta lacus fringilla vel<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Aenean sit amet erat nunc<span class="kw">&lt;/li&gt;</span>
-  <span class="kw">&lt;li&gt;</span>Eget porttitor lorem<span class="kw">&lt;/li&gt;</span>
-<span class="kw">&lt;/ol&gt;</span></code></pre>
-<p><strong>TIP</strong>: If you just use <code>1.</code> for each number, GitHub will automatically number each item. For example:</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">Lorem ipsum dolor sit amet</span>
-1. <span class="fl">Consectetur adipiscing elit</span>
-1. <span class="fl">Integer molestie lorem at massa</span>
-1. <span class="fl">Facilisis in pretium nisl aliquet</span>
-1. <span class="fl">Nulla volutpat aliquam velit</span>
-1. <span class="fl">Faucibus porta lacus fringilla vel</span>
-1. <span class="fl">Aenean sit amet erat nunc</span>
-1. <span class="fl">Eget porttitor lorem</span></code></pre>
-<p>Renders to:</p>
-<ol type="1">
-<li>Lorem ipsum dolor sit amet</li>
-<li>Consectetur adipiscing elit</li>
-<li>Integer molestie lorem at massa</li>
-<li>Facilisis in pretium nisl aliquet</li>
-<li>Nulla volutpat aliquam velit</li>
-<li>Faucibus porta lacus fringilla vel</li>
-<li>Aenean sit amet erat nunc</li>
-<li>Eget porttitor lorem</li>
-</ol>
-</section>
-</section>
-<section id="code" class="level2">
-<h2>Code</h2>
-<section id="inline-code" class="level3">
-<h3>Inline code</h3>
-<p>Wrap inline snippets of code with <code>`</code>.</p>
-<p>For example, <code>&lt;section&gt;&lt;/section&gt;</code> should be wrapped as “inline”.</p>
-<pre class="sourceCode html"><code class="sourceCode html">For example, `<span class="kw">&lt;section&gt;&lt;/section&gt;</span>` should be wrapped as &quot;inline&quot;.</code></pre>
-</section>
-<section id="indented-code" class="level3">
-<h3>Indented code</h3>
-<p>Or indent several lines of code by at least four spaces, as in:</p>
-<pre class="js"><code>    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code</code></pre>
-<pre><code>// Some comments
-line 1 of code
-line 2 of code
-line 3 of code</code></pre>
-</section>
-<section id="block-code-fences" class="level3">
-<h3>Block code “fences”</h3>
-<p>Use “fences” <code>```</code> to block in multiple lines of code.</p>
-<pre>
-``` html
-Sample text here...
-```
-</pre>
-<pre><code>Sample text here...</code></pre>
-<p>HTML:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;pre&gt;</span>
-  <span class="kw">&lt;p&gt;</span>Sample text here...<span class="kw">&lt;/p&gt;</span>
-<span class="kw">&lt;/pre&gt;</span></code></pre>
-</section>
-<section id="syntax-highlighting" class="level3">
-<h3>Syntax highlighting</h3>
-<p>GFM, or “GitHub Flavored Markdown” also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first code “fence”, <code>``` js</code>, and syntax highlighting will automatically be applied in the rendered HTML. For example, to apply syntax highlighting to JavaScript code:</p>
-<pre>
-``` javascript
-grunt.initConfig({
-  assemble: {
-    options: {
-      assets: 'docs/assets',
-      data: 'src/data/*.{json,yml}',
-      helpers: 'src/custom-helpers.js',
-      partials: ['src/partials/**/*.{hbs,md}']
-    },
-    pages: {
-      options: {
-        layout: 'default.hbs'
-      },
-      files: {
-        './': ['src/templates/pages/index.hbs']
-      }
-    }
-  }
-};
-```
-</pre>
-<p>Renders to:</p>
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">grunt</span>.<span class="fu">initConfig</span>({
-  <span class="dt">assemble</span>: {
-    <span class="dt">options</span>: {
-      <span class="dt">assets</span>: <span class="st">&#39;docs/assets&#39;</span>,
-      <span class="dt">data</span>: <span class="st">&#39;src/data/*.{json,yml}&#39;</span>,
-      <span class="dt">helpers</span>: <span class="st">&#39;src/custom-helpers.js&#39;</span>,
-      <span class="dt">partials</span>: [<span class="st">&#39;src/partials/**/*.{hbs,md}&#39;</span>]
-    },
-    <span class="dt">pages</span>: {
-      <span class="dt">options</span>: {
-        <span class="dt">layout</span>: <span class="st">&#39;default.hbs&#39;</span>
-      },
-      <span class="dt">files</span>: {
-        <span class="st">&#39;./&#39;</span>: [<span class="st">&#39;src/templates/pages/index.hbs&#39;</span>]
-      }
-    }
-  }
-};</code></pre>
-<p>And this complicated HTML:</p>
-<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;highlight&quot;</span><span class="kw">&gt;&lt;pre&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>grunt<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>.<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>initConfig<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>({<span class="kw">&lt;/span&gt;</span>
-  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>assemble<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>{<span class="kw">&lt;/span&gt;</span>
-    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>options<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>{<span class="kw">&lt;/span&gt;</span>
-      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>assets<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;docs/assets&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>,<span class="kw">&lt;/span&gt;</span>
-      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>data<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;src/data/*.{json,yml}&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>,<span class="kw">&lt;/span&gt;</span>
-      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>helpers<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;src/custom-helpers.js&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>,<span class="kw">&lt;/span&gt;</span>
-      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>partials<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>[<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;src/partials/**/*.{hbs,md}&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>]<span class="kw">&lt;/span&gt;</span>
-    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>},<span class="kw">&lt;/span&gt;</span>
-    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>pages<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>{<span class="kw">&lt;/span&gt;</span>
-      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>options<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>{<span class="kw">&lt;/span&gt;</span>
-        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>layout<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;default.hbs&#39;<span class="kw">&lt;/span&gt;</span>
-      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>},<span class="kw">&lt;/span&gt;</span>
-      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;nx&quot;</span><span class="kw">&gt;</span>files<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>{<span class="kw">&lt;/span&gt;</span>
-        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;./&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;o&quot;</span><span class="kw">&gt;</span>:<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>[<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;s1&quot;</span><span class="kw">&gt;</span>&#39;src/templates/pages/index.hbs&#39;<span class="kw">&lt;/span&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>]<span class="kw">&lt;/span&gt;</span>
-      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>}<span class="kw">&lt;/span&gt;</span>
-    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>}<span class="kw">&lt;/span&gt;</span>
-  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>}<span class="kw">&lt;/span&gt;</span>
-<span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;p&quot;</span><span class="kw">&gt;</span>};<span class="kw">&lt;/span&gt;</span>
-<span class="kw">&lt;/pre&gt;&lt;/div&gt;</span></code></pre>
-</section>
-</section>
-<section id="tables" class="level2">
-<h2>Tables</h2>
-<p>Tables are created by adding pipes as dividers between each cell, and by adding a line of dashes (also separated by bars) beneath the header. Note that the pipes do not need to be vertically aligned.</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |</code></pre>
-<p>Renders to:</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Option</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">data</td>
-<td style="text-align: left;">path to data files to supply the data that will be passed into templates.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">engine</td>
-<td style="text-align: left;">engine to be used for processing templates. Handlebars is the default.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ext</td>
-<td style="text-align: left;">extension to be used for dest files.</td>
-</tr>
-</tbody>
-</table>
-<p>And this HTML:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;table&gt;</span>
-  <span class="kw">&lt;tr&gt;</span>
-    <span class="kw">&lt;th&gt;</span>Option<span class="kw">&lt;/th&gt;</span>
-    <span class="kw">&lt;th&gt;</span>Description<span class="kw">&lt;/th&gt;</span>
-  <span class="kw">&lt;/tr&gt;</span>
-  <span class="kw">&lt;tr&gt;</span>
-    <span class="kw">&lt;td&gt;</span>data<span class="kw">&lt;/td&gt;</span>
-    <span class="kw">&lt;td&gt;</span>path to data files to supply the data that will be passed into templates.<span class="kw">&lt;/td&gt;</span>
-  <span class="kw">&lt;/tr&gt;</span>
-  <span class="kw">&lt;tr&gt;</span>
-    <span class="kw">&lt;td&gt;</span>engine<span class="kw">&lt;/td&gt;</span>
-    <span class="kw">&lt;td&gt;</span>engine to be used for processing templates. Handlebars is the default.<span class="kw">&lt;/td&gt;</span>
-  <span class="kw">&lt;/tr&gt;</span>
-  <span class="kw">&lt;tr&gt;</span>
-    <span class="kw">&lt;td&gt;</span>ext<span class="kw">&lt;/td&gt;</span>
-    <span class="kw">&lt;td&gt;</span>extension to be used for dest files.<span class="kw">&lt;/td&gt;</span>
-  <span class="kw">&lt;/tr&gt;</span>
-<span class="kw">&lt;/table&gt;</span></code></pre>
-<section id="right-aligned-text" class="level3">
-<h3>Right aligned text</h3>
-<p>Adding a colon on the right side of the dashes below any heading will right align text for that column.</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Option</th>
-<th style="text-align: right;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">data</td>
-<td style="text-align: right;">path to data files to supply the data that will be passed into templates.</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">engine</td>
-<td style="text-align: right;">engine to be used for processing templates. Handlebars is the default.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">ext</td>
-<td style="text-align: right;">extension to be used for dest files.</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="links" class="level2">
-<h2>Links</h2>
-<section id="basic-link" class="level3">
-<h3>Basic link</h3>
-<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="ot">[Assemble](http://assemble.io)</span></code></pre>
-<p>Renders to (hover over the link, there is no tooltip):</p>
-<p><a href="http://assemble.io">Assemble</a></p>
-<p>HTML:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://assemble.io&quot;</span><span class="kw">&gt;</span>Assemble<span class="kw">&lt;/a&gt;</span></code></pre>
-</section>
-<section id="add-a-title" class="level3">
-<h3>Add a title</h3>
-<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="ot">[Upstage](https://github.com/upstage/ &quot;Visit Upstage!&quot;)</span></code></pre>
-<p>Renders to (hover over the link, there should be a tooltip):</p>
-<p><a href="https://github.com/upstage/" title="Visit Upstage!">Upstage</a></p>
-<p>HTML:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;https://github.com/upstage/&quot;</span><span class="ot"> title=</span><span class="st">&quot;Visit Upstage!&quot;</span><span class="kw">&gt;</span>Upstage<span class="kw">&lt;/a&gt;</span></code></pre>
-</section>
-<section id="named-anchors" class="level3">
-<h3>Named Anchors</h3>
-<p>Named anchors enable you to jump to the specified anchor point on the same page. For example, each of these chapters:</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu"># Table of Contents</span>
-  * <span class="ot">[Chapter 1](#chapter-1)</span>
-  * <span class="ot">[Chapter 2](#chapter-2)</span>
-  * <span class="ot">[Chapter 3](#chapter-3)</span></code></pre>
-<p>will jump to these sections:</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu">## Chapter 1 &lt;a id=&quot;chapter-1&quot;&gt;&lt;/a&gt;</span>
-Content for chapter one.
-
-<span class="fu">## Chapter 2 &lt;a id=&quot;chapter-2&quot;&gt;&lt;/a&gt;</span>
-Content for chapter one.
-
-<span class="fu">## Chapter 3 &lt;a id=&quot;chapter-3&quot;&gt;&lt;/a&gt;</span>
-Content for chapter one.</code></pre>
-<p><strong>NOTE</strong> that specific placement of the anchor tag seems to be arbitrary. They are placed inline here since it seems to be unobtrusive, and it works.</p>
-</section>
-</section>
-</section>
 <section id="cascade-rules" class="level1">
 <h1>Cascade Rules</h1>
-<p>This chapter will discuss how the browser determines which style rule to apply to an element. It seems that are many resources that talk about individual components of this determination such as specificity, cascade, etc., in isolation. I feel this is a huge mistake and leaves developers confused as to how things actually work. In fact, the spec’s chapter that speaks to the way this is worked out is <a href="http://www.w3.org/TR/CSS2/cascade.html">fairly short</a> and worth a glance. Let’s take a look at the way a browser determines which rule “wins”…</p>
-<p>We’ll take the approach of annotating parts of this spec so we’re confident in how this all works. Let’s start with __specified values_:</p>
-<blockquote>
-<p>6.1.1 Specified values</p>
-<p>User agents must first assign a specified value to each property based on the following mechanisms (in order of precedence):</p>
-<p>If the cascade results in a value, use it. Otherwise, if the property is inherited and the element is not the root of the document tree, use the computed value of the parent element. Otherwise use the property’s initial value. The initial value of each property is indicated in the property’s definition.</p>
-</blockquote>
-<p>So this leads us to ask, “What exactly are these things: <em>cascade</em>, <em>inheritance</em>, and what’s a property’s <em>initial value</em>?</p>
-<section id="the-cascade" class="level3">
-<h3>The cascade</h3>
-<blockquote>
-<p>Style sheets may have three different origins: author, user, and user agent.</p>
-</blockquote>
-<p>We’ll go deeper, but for now, just think of the <em>cascade</em> as the ordering of the various types of stylesheets that need to be evaluated. As rule 6.1.1 above states, the cascade gets the most weight in the decision of which rule to apply to an element.</p>
-</section>
-<section id="inheritance" class="level3">
-<h3>Inheritance</h3>
-<blockquote>
-<p>When inheritance occurs, elements inherit computed values. The computed value from the parent element becomes both the specified value and the computed value on the child.</p>
-</blockquote>
-<p>Note that some types of CSS properties are inherited, others are not. <a href="http://www.w3.org/TR/CSS2/propidx.html">See a table</a>, but, for example, <code>color</code> is inherited while <code>display</code> or <code>border</code> are not. As you notice from 6.1.1, this factor takes second place in terms of precedence. Also, the specificity of an inherited rule is “nada”. We’ll look at how that gets taken in to account in a bit.</p>
-</section>
-<section id="initial-value" class="level3">
-<h3>Initial Value</h3>
-<p><a href="http://reference.sitepoint.com/css/defaultvalues">Sitepoint</a> provides a great overview of how initial values work:</p>
-<blockquote>
-<p>The default value for a property, when it’s not specified explicitly or inherited, is called the initial value. The initial value of each property is defined in the CSS specification.</p>
-</blockquote>
-<blockquote>
-<p>Browsers have user agent style sheets that define the default rendering of the various HTML element types. In some cases, the rules in those built-in style sheets define values other than the initial values from the CSS specification. For example, links are usually underlined, even though the initial value for the text-decoration property is none.</p>
-</blockquote>
-<p>Further, as we saw in 6.1.1, initial value comes after the cascade and inheritance in terms of precedence.</p>
-</section>
+<p>This chapter will discuss how the browser determines which style rule(s) to apply to a particular DOM element. The details for how this is done are in the <a href="http://www.w3.org/TR/CSS2/cascade.html">specification</a> on the Cascade.</p>
 <section id="css-rule-sorting" class="level2">
 <h2>CSS Rule Sorting</h2>
-<p>Before we dive in to the details of things <em>specificity</em>, <em>inheritance</em>, etc., let’s attempt to get a broader overview of just how the browser determines which rule to apply for a given element. It’s, essentially, a four-step process:</p>
+<p>Before we dive in to the details, let’s attempt to get a broad overview of the four-step process browsers use to determine which rules to apply for a given element:</p>
 <ol type="1">
-<li><strong>Gather Qualified Declarations:</strong> First gather all declarations that apply to the element for the current medium (such as <em>screen</em>, <em>print</em>, etc.) Pass all matches through to the next part of the sorting algorthm</li>
-<li><strong>Sort by Origin:</strong> In this level of sorting, sort by stylesheet origin in ascending order of precedence which <a href="http://www.w3.org/TR/CSS2/cascade.html#cascading-order">the spec</a> as:</li>
+<li><strong>Gather Qualified Declarations:</strong> First gather all declarations that apply to the element for the current medium (example mediums might be: <em>screen</em>, <em>print</em>, <em>tv</em>, <em>braille</em>, etc. See <a href="http://www.w3.org/TR/CSS21/media.html#media-types">the media types spec</a> for all available media types). Pass all matches through to the next part of the sorting algorthm</li>
+<li><strong>Sort by Origin:</strong> Next, we sort by stylesheet <em>origin</em> in ascending order of precedence provided by <a href="http://www.w3.org/TR/CSS2/cascade.html#cascading-order">the spec</a> as follows:</li>
 </ol>
 <ul>
 <li>user agent declarations</li>
 <li>user normal declarations</li>
 <li>author normal declarations</li>
 <li>author important declarations</li>
-<li>user important declarations (intuitevly we can see that, in order to provide accessibility, user’s with special requirements are given a final and most prioritized mechanism)</li>
+<li>user important declarations (intuitively we can see that, in order to provide proper accessibility, user’s with special requirements need a means of having “the final say” for things like increased text size)</li>
 </ul>
-<p><em>The term <strong>weight</strong> is sometimes used to describe the priority provided given the above considerations</em></p>
+<p><em>The term <strong>weight</strong> is used to describe the priority assigned to competing style rules using the above considerations. Style rules with a higher <strong>weight</strong> will take precedence over those with a lower <strong>weight</strong>.</em></p>
 <ol start="3" type="1">
-<li><strong>Sort by Specificity:</strong> If, and only if, the above sort results in rules having duplicate importance and origin, than, sort by the specificity of selector</li>
-<li><strong>Sort by Order of Declaration:</strong> If, and only if, the competing declarations have the same weight and specificity, than sort by order specified (where the latter specified wins).</li>
+<li><strong>Sort by Specificity:</strong> If (and only if) the above sort results in rules that have the same importance and origin, than sort those rules by selector specificity</li>
+<li><strong>Sort by Order of Declaration:</strong> If (and only if) the competing declarations have the same weight and specificity, than sort by order specified (where the latter specified rule wins).</li>
 </ol>
-<p>One reason why we describe these broader rules here, is that it’s important to understand that <strong>weight</strong>, or, <em>sort by origin</em>, will always “beat out” <strong>specificity</strong>. Put differently, it doesn’t matter how much more specific one rule is over another if they aren’t deemed to have the same origin/weight. Not understanding this fact can lead to confusing results. That said, most of the time we are, in fact, “competing with ourselves” as author stylesheets are generally carry the most weight (<code>!important</code> rules notwithstanding).</p>
-<p>If you’d like a visual presentation of how the cascade rules are applied you may want to check out Russ Weakley’s excellent <a href="http://www.slideshare.net/maxdesign/css-cascade-1658158">CSS Cascade Slideshare</a> chock full of extremely useful examples.</p>
+<p>The reason we’re describing the sort ordering process first, is that it’s important to understand the sequence in which weight, specificity, and declaration order are evaluated. First <em>weight</em>, then <em>specificity</em>, and finally <em>order of declaration</em>.</p>
+<p><em>There’s actually another dimension to this. If we have elements that don’t have any styles applied directly to them, there’s still the case that those elements may “inherit” styles from their ancestors. Further, style properties have initial default values to consider. We’ll cover those details in a bit.</em></p>
+<p>Now that we’ve discussed the browser’s overall strategy for sorting style rules, let’s look at <strong>origin</strong>, <strong>specificity</strong>, and <strong>inheritance</strong> in more detail.</p>
 </section>
 <section id="origin" class="level2">
 <h2>Origin</h2>
-<p>TBD</p>
+<p>There are three <strong>types</strong> of stylesheets that a browser must consider when sorting in ascending orders of precendence:</p>
+<ol type="1">
+<li>User Agent stylesheet</li>
+</ol>
+<p>The user agent stylesheet sets up a browser’s default styles. Note that each browser has its own stylesheet so Chrome’s default style will be a bit different than say Firefox’s.</p>
+<ol start="2" type="1">
+<li>User stylesheet</li>
+</ol>
+<p>User’s can define their own stylesheets to override the browser’s default stylesheet. As such, the user stylesheet is given more <strong>weight</strong> than the browser’s stylesheet.</p>
+<ol start="3" type="1">
+<li>Author stylesheet</li>
+</ol>
+<p>Page authors get the highest precedence and their stylesheets will override both the user agent and user stylesheets (with the earlier caveat that any rule with <code>!important</code> from the user stylesheet will override all other rules providing for accessibility concerns).</p>
+<p>The type of stylesheet that is being considered–user agent, user, or author–determines the stylesheet <strong>origin</strong>.</p>
+</section>
+<section id="weight-beats-specificity" class="level2">
+<h2>Weight Beats Specificity</h2>
+<p>As noted from the sorting process described earlier, the browser will prioritize rules with more weight before considering specificity. This is rarely an issue to page authors since an author stylesheet generally gets the most weight anyway (ignoring, of course, the user stylesheet <code>!important</code> special case). However, it’s worth noting that it’s possible for specificity to be completely ignored when origin and/or importance are not the same. Consider a page that includes a simple author stylesheet like so:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+<span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">utf-8</span><span class="kw">&gt;</span>
+<span class="kw">&lt;title&gt;</span>Cascade Example<span class="kw">&lt;/title&gt;</span>
+<span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;author.css&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+  <span class="kw">&lt;h1</span><span class="ot"> id=</span><span class="st">&quot;obnoxious&quot;</span><span class="kw">&gt;</span>I&#39;m an h1<span class="kw">&lt;/h1&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="co">/* AUTHOR STYLESHEET */</span>
+h1 <span class="kw">{</span>
+  <span class="kw">font-size:</span> <span class="dt">72px</span><span class="kw">;</span>
+  <span class="kw">font-family:</span> <span class="st">&quot;Arial Rounded MT Bold&quot;</span>, <span class="st">&quot;Arial Narrow Bold&quot;</span>, <span class="dt">sans-serif</span><span class="kw">;</span>
+  <span class="kw">font-weight:</span> <span class="dt">normal</span><span class="kw">;</span>
+  <span class="kw">text-transform:</span> <span class="dt">uppercase</span><span class="kw">;</span>
+  <span class="kw">color:</span> <span class="dt">purple</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<p>Now consider a user stylesheet that is added as a preference:</p>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="co">/* USER STYLESHEET */</span>
+<span class="fl">#obnoxious</span> <span class="kw">{</span>
+  <span class="kw">color:</span> <span class="dt">green</span><span class="kw">;</span>
+  <span class="kw">font-style:</span> <span class="dt">italic</span><span class="kw">;</span>
+  <span class="kw">font-size:</span> <span class="dt">24px</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<p>We haven’t yet discussed the rules for specificity, but an ID selector (like <code>#obnoxious</code>), is much more specific than an element selector (like the <code>h1</code> defined in the author stylesheet above). Intuitively, you may think that the <code>#obnoxious</code> rule would “win the battle” since it’s more specific. However, in fact, the less specific <code>h1</code> rule from the author stylesheet will get used since the sorting process prefers origin over specificity. Let’s take a look at this example a bit more visually.</p>
+<p>First we add our custom user stylesheet via Safari’s preferences:</p>
+<p><img src="examples/cascade/safari-preference-user-style.png" title="Adding a user stylesheet via Safari&#39;s preferences dialog" alt="Safari preferences" /><br /> When we open our test page in Safari we clearly see that the author style rules override any conflicting user style rules:</p>
+<p><img src="examples/cascade/cascade-user-styles.png" title="Notice that the author style rule wins even though the user&#39;s stylesheet rule is more specific" alt="User and author stylesheet’s in Safari" /><br /> We glean the following from this example:</p>
+<ul>
+<li>The <code>font-style</code> is not defined in the author stylesheet so the italic defined by the user gets used</li>
+<li><code>color</code> is defined in both but the author’s <code>purple</code> gets used given the origin principle</li>
+<li>same for <code>font-size</code>–the author’s <code>72px</code> value is used</li>
+<li><code>font-weight</code> is used in two stylesheets–the user agent defines it as <code>bold</code> while the author defines it as <code>normal</code>. It’s a bit hard to see that the weight is <em>normal</em> since it’s a heavy font (you’ll have to trust me). Nevertheless, the author’s rule wins that battle as well</li>
+</ul>
+<p>This example clearly illustrates that, although it’s rarely an issue to page authors since their stylesheet is the most weighty, origin is considered over specificity.</p>
+</section>
+<section id="styles-that-stick" class="level2">
+<h2>Styles That Stick</h2>
+<p>There are a few ways that styles rules will get applied. The most obvious is an explicit rule gets defined such directly such as:</p>
+<pre class="sourceCode css"><code class="sourceCode css">h1<span class="fl">.gaudy</span> <span class="kw">{</span>
+  <span class="kw">color:</span> hotpink<span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<p>With this definition, we are directly applying the color <code>hotpink</code> to any level one header with the class <code>gaudy</code>. This is a cascading style–simple enough. There are a couple of more subtle ways that a style rule may get applied such as <strong>inheritance</strong> and <strong>initial</strong> value. Let’s look at those next.</p>
+<section id="inheritance" class="level3">
+<h3>Inheritance</h3>
+<p>According to the <a href="http://www.w3.org/TR/CSS2/cascade.html#inheritance">spec</a>:</p>
+<blockquote>
+<p>When inheritance occurs, elements inherit computed values. The computed value from the parent element becomes both the specified value and the computed value on the child.</p>
+</blockquote>
+<p>Inheritance happens when descendent elements take on the styles defined by an ancestor element. In the following example, the paragraph element will inherit the font family defined in its parent element <code>.outer</code> since <code>font-family</code> <a href="http://www.w3.org/TR/css3-fonts/#font-family-prop">is an inherited property</a>:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;style&gt;</span>
+  <span class="fl">.outer</span> <span class="kw">{</span>
+    <span class="kw">font-family:</span> <span class="dt">sans-serif</span><span class="kw">;</span>
+  <span class="kw">}</span>
+<span class="kw">&lt;/style&gt;</span>
+<span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;outer&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;p&gt;</span>I will be a san-serif<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
+<p>Note that some types of CSS properties are inherited, others are not. <a href="http://www.w3.org/TR/CSS2/propidx.html">See this table</a>, but, for example, <code>color</code> is an inherited property, while <code>display</code> and <code>border</code> are <a href="http://dev.w3.org/csswg/css-backgrounds/#borders">not</a>. These rules tend to make intuitive sense–if <code>borders</code> were inherited, it would be a big issue; you’d end up with a maze of borders for elements that have children!</p>
+<p>In terms of precedence, inheritance comes after cascading values, but before initial values.</p>
+</section>
+<section id="initial-value" class="level3">
+<h3>Initial Value</h3>
+<p><a href="http://reference.sitepoint.com/css/defaultvalues">Sitepoint</a> provides an overview of how initial values work:</p>
+<blockquote>
+<p>The default value for a property, when it’s not specified explicitly or inherited, is called the initial value. The initial value of each property is defined in the CSS specification.</p>
+</blockquote>
+<blockquote>
+<p>Browsers have user agent style sheets that define the default rendering of the various HTML element types. In some cases, the rules in those built-in style sheets define values other than the initial values from the CSS specification. For example, links are usually underlined, even though the initial value for the text-decoration property is none.</p>
+</blockquote>
+<p>Another example of initial value is <code>border-color</code>, which will get a default of the <a href="http://www.w3.org/TR/css3-color/#currentcolor">currentColor</a> (essentially, the current value of the <code>color</code> property). Initial value comes after cascading and inherited values in terms of precedence.</p>
+<p>The browser has to work out the details of how cascaded, inherited, and initial style values are applied to any given element. Let’s examine how that process works next.</p>
+</section>
+</section>
+<section id="rule-evaluation" class="level2">
+<h2>Rule Evaluation</h2>
+<p>Once the browser has constructed a document tree–a tree-based hierarchy of elements representing the source document–it needs to take any <strong>specified values</strong> and resolve them to <strong>computed values</strong> (for example, <code>em</code> units are converted to pixels and URIs are made absolute), and then finally resolve those computed values to <strong>used values</strong> and then <strong>actual values</strong>. A used value might be the result of evaluating a rule like: <code>width: 75%</code>. Obviously, determining what that percentage width is calculating from has to happen at run-time. The actual value is the value that the browser actually uses when it renders the page. An example from the spec is:</p>
+<blockquote>
+<p>the user agent may be forced to use only black and white shades instead of full color</p>
+</blockquote>
+<p>The details of this process are defined in the <a href="http://www.w3.org/TR/CSS2/cascade.html#value-stages">spec on value-stages</a>.</p>
+<p>As CSS authors, we have the most control over specified values so let’s focus our attention on how those get evaluated:</p>
+<blockquote>
+<p>6.1.1 Specified values</p>
+<p>User agents must first assign a specified value to each property based on the following mechanisms (in order of precedence):</p>
+<p>If the cascade results in a value, use it. Otherwise, if the property is inherited and the element is not the root of the document tree, use the computed value of the parent element. Otherwise use the property’s initial value. The initial value of each property is indicated in the property’s definition.</p>
+</blockquote>
+<p>So, the cascade is still the first and foremost consideration, but now we start to look at cases where no direct style rule has been defined for a particular element. In such cases, inheritance and inital values will be considered. You’re probably asking yourself, “What is this <em>inheritance</em> thing, and what’s a property’s <em>initial value</em>? Let’s look at those now.</p>
+</section>
+<section id="take-a-deep-breath" class="level2">
+<h2>Take a Deep Breath</h2>
+<p>We’ve delved pretty deep into the details of the Cascade. Let’s try not to get too overwhelmed by these details and recap the most important bits:</p>
+<ul>
+<li>Rules from the Cascade are considered first</li>
+<li>Then inherited rules</li>
+<li>Then initial values</li>
+</ul>
+<p>Whew!</p>
 </section>
 <section id="specificity-details" class="level2">
 <h2>Specificity Details</h2>
+<p>I’ve shown you earlier that origin is considered before specificity, but I have a confession to make…page authors generally only need to worry about specificity since, as stated, the author stylesheet gets the most weight.</p>
+<section id="calculating-specificity" class="level3">
+<h3>Calculating Specificity</h3>
+<p>In order to determine how two or more conflicting style rules will get resolved (providing they have the same <em>weight</em>), the browser uses a sort of “scoring system&amp;rdqou; called <a href="http://www.w3.org/TR/CSS2/cascade.html#specificity">specificity</a>. The main idea is that rules with a higher specificity will take precedence over those with a lower specificity.</p>
+<p>Specificity is calculated as a four digit comma delimited number where each number can be labeled from left to right as: ‘a’, ‘b’, ‘c’, ‘d’.</p>
+<ul>
+<li>Add 1 to ‘a’ if there’s an inline ‘style’ attribute is used</li>
+<li>Add 1 to ‘b’ for each ID in the selector</li>
+<li>Add 1 to ‘c’ for each class, attribute and pseudo-classes in the selector</li>
+<li>Add 1 to ‘d’ for each element names and pseudo-elements in the selector</li>
+</ul>
+<p>To gather the total specificity we simply concatenate those four numbers. Here are some examples straight from the <a href="http://www.w3.org/TR/CSS2/cascade.html#specificity">spec</a>:</p>
+<pre class="sourceCode css"><code class="sourceCode css"> *             <span class="kw">{}</span>  <span class="co">/* a=0 b=0 c=0 d=0 -&gt; specificity = 0,0,0,0 */</span>
+ li            <span class="kw">{}</span>  <span class="co">/* a=0 b=0 c=0 d=1 -&gt; specificity = 0,0,0,1 */</span>
+ li<span class="dv">:first-line</span> <span class="kw">{}</span>  <span class="co">/* a=0 b=0 c=0 d=2 -&gt; specificity = 0,0,0,2 */</span>
+ ul li         <span class="kw">{}</span>  <span class="co">/* a=0 b=0 c=0 d=2 -&gt; specificity = 0,0,0,2 */</span>
+ ul ol+li      <span class="kw">{}</span>  <span class="co">/* a=0 b=0 c=0 d=3 -&gt; specificity = 0,0,0,3 */</span>
+ h1 + *<span class="ch">[rel=up]</span><span class="kw">{}</span>  <span class="co">/* a=0 b=0 c=1 d=1 -&gt; specificity = 0,0,1,1 */</span>
+ ul ol li<span class="fl">.red</span>  <span class="kw">{}</span>  <span class="co">/* a=0 b=0 c=1 d=3 -&gt; specificity = 0,0,1,3 */</span>
+ li<span class="fl">.red.level</span>  <span class="kw">{}</span>  <span class="co">/* a=0 b=0 c=2 d=1 -&gt; specificity = 0,0,2,1 */</span>
+ <span class="fl">#x34y</span>         <span class="kw">{}</span>  <span class="co">/* a=0 b=1 c=0 d=0 -&gt; specificity = 0,1,0,0 */</span>
+ style=<span class="st">&quot;&quot;</span>          <span class="co">/* a=1 b=0 c=0 d=0 -&gt; specificity = 1,0,0,0 */</span>
+ ```
+
+ Let<span class="st">&#39;s take a look at a few more examples from within a simple html page:</span>
+
+<span class="st"> ```html</span>
+<span class="st">&lt;head&gt;</span>
+<span class="st">&lt;style type=&quot;text/css&quot;&gt;</span>
+<span class="st">body { color: blue; }</span>
+<span class="st">#abc { color: red;  }</span>
+<span class="st">&lt;/style&gt;</span>
+<span class="st">&lt;/head&gt;</span>
+<span class="st">&lt;body&gt;</span>
+<span class="st">  &lt;p id=&quot;abc&quot;&gt;I have and ID so I will render red&lt;/p&gt;</span>
+<span class="st">  &lt;h1 style=&quot;color: green&quot;&gt;I have an inline style and render green&lt;/h1&gt;</span>
+<span class="st">&lt;/body&gt;</span></code></pre>
+<p>In this example, we have two defined style rules for <code>body</code> and <code>#abc</code>. The body rule has a specificity of <code>0001</code> and the <code>#abc</code> has a specificity of <code>0100</code>. The ID clearly ”wins“. The <code>h1</code> has an inline style and will thus calculate to <code>1000</code>.</p>
+<p>Let’s look at one more fairly complex selector: <code>css #foo &gt; #bar ul.klass li p:first-line {}  /* a=0 b=2 c=1 d=4 -&gt; specificity = 0,2,1,4 */</code> * No inline <code>style</code> so a=0 * Two IDs, <code>#foo</code> and <code>#bar</code> so b=2 * One class <code>.klass so c=1 * Three elements</code>ul<code>,</code>li<code>, and</code>p<code>, as well as one pseudo-element</code>:first-line` so d=4</p>
+<p>Selector syntax is out of the scope for this book, but you can find the general rules for [selectors here].</p>
 </section>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
-<p><a href="http://shop.oreilly.com/product/9780596802455.do">CSS: The Missing Manual:</a> <a href="http://shop.oreilly.com/product/9780596527334.do">CSS: The Definitive Guide, 3rd Edition:</a> <a href="http://www.w3.org/TR/CSS2/cascade.html">CSS 2.1 Spec:</a></p>
-<p>http://css-tricks.com/specifics-on-css-specificity/ http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/</p>
+<section id="media" class="level2">
+<h2>Media</h2>
+<p>As mentioned earlier, the first step in evaluating the cascade, is to gather all relevent rules that apply for the current medium. This can be a factor when you’re web site or application targets more than one medium. We’ll take on print as that’s a common use case.</p>
+<section id="print-media" class="level3">
+<h3>Print Media</h3>
+<p>When a user elects to print one of your web pages, the current medium will be <strong>print</strong>. When this happens, it’s preferable to only have to deal with one print stylesheet. However, if you’ve set your most general stylesheets to apply to <strong>all</strong> media (e.g. <code>medial=&quot;all&quot;</code>) your print stylesheet will have to “fight” against the more general stylesheets to win the specificity battle. You might instead want to target the media type of <strong>screen</strong> for your general stylesheets to avoid this. Generally, if you see a ton of <code>!important</code> values in the print stylesheet, it’s a code smell that indicates the misuse of <code>media=&quot;all&quot;</code>.</p>
+</section>
+<section id="debugging-print-styles" class="level3">
+<h3>Debugging Print Styles</h3>
+<p>Eric Meyer provides a wonderful trick for debugging stylesheets in his book <a href="http://meyerweb.com/eric/books/smashing/">Smashing CSS: Professional Techniques for Modern Layout</a>. Essentially, you turn off the general stylesheets, by purposely setting the media type to something other than <strong>all</strong> or <strong>screen</strong>. Then, you set your print stylesheet to <strong>screen</strong>. Once that’s done, you should be able to load your site in a normal browser–which is the <strong>screen</strong> medium–and have access to all your favorite developer tools as well as frequent page reloading. Here’s an example of setting up such an approach:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;styles.css&quot;</span><span class="ot"> media=</span><span class="st">&quot;tv&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;print.css&quot;</span><span class="ot"> media=</span><span class="st">&quot;screen&quot;</span><span class="kw">&gt;</span></code></pre>
+<p>Once you’ve got your print styles looking the way you want, you’d simply switch <code>styles.css</code> to point to <code>media=&quot;screen&quot;</code>, and <code>print.css</code> to point to <code>media=&quot;print&quot;</code>. Neat trick, huh!</p>
+</section>
+</section>
+<section id="references" class="level2">
+<h2>References</h2>
+<p>If you’d like a visual presentation of how the cascade rules are applied you may want to check out Russ Weakley’s excellent <a href="http://www.slideshare.net/maxdesign/css-cascade-1658158">CSS Cascade Slideshare</a> chock full of extremely useful examples.</p>
+<p><a href="http://www.w3.org/TR/CSS2/cascade.html">CSS 2.1 Spec</a></p>
+<p><a href="http://shop.oreilly.com/product/9780596802455.do">CSS: The Missing Manual</a></p>
+<p><a href="http://shop.oreilly.com/product/9780596527334.do">CSS: The Definitive Guide, 3rd Edition</a></p>
+<p><a href="http://meyerweb.com/eric/books/smashing/">Smashing CSS: Professional Techniques for Modern Layout</a></p>
+</section>
 </section>
 <script type="text/javascript">
 /*

@@ -6,7 +6,7 @@ title="CSS: The Hard Parts"
 filename='css-the-hard-parts'
 
 # TODO: Add in pdf once pdflatex installed to verify
-all: html epub rtf mobi
+all: html epub rtf pdf mobi
 
 html:
 	pandoc -s chapters/*.md -t html5 -o index.html -c $(stylesheets_dir)/screen.css \
@@ -35,6 +35,14 @@ rtf:
 		--title-prefix $(title) \
 		--normalize \
 		--smart
+
+
+pdf:
+	pandoc -s $(source) -o $(filename).pdf \
+		--title-prefix $(title) \
+		--normalize \
+		--smart \
+		--toc
 
 mobi: epub
 	kindlegen $(filename).epub

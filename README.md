@@ -21,9 +21,9 @@ You should now have `pandoc` and `kindlegen` available in your shell.
 
 pdflatex: In order to build out PDF files you need to install mactex which is 2.4gb!
 https://tug.org/mactex/
-
 ```shell
-ln -s /path/to/pdflatex /usr/local/bin
+# Find its path with: `find /usr/ -name "pdflatex"
+$ ln -s /usr/texbin/pdflatex /usr/local/bin # symlink it
 ```
 
 ### Tools
@@ -45,6 +45,16 @@ java -jar ~/bin/epubcheck-v4.0.0-alpha9/epubcheck.jar ~/workspace/opensource/uni
 More debugging tips here:
 http://puppetlabs.com/blog/automated-ebook-generation-convert-markdown-epub-mobi-pandoc-kindlegen
 
+
+### Gotchas
+
+Images will float to the next available page and surrounding text will appear in the wrong order unless you escape the image:
+http://comments.gmane.org/gmane.text.pandoc/8350
+For example, note the last '\' backslash character:
+
+```markdown
+![Safari preferences](examples/cascade/safari-preference-user-style.png "Adding a user stylesheet via Safari's preferences dialog")\
+```
 
 ## Reference Materials
 

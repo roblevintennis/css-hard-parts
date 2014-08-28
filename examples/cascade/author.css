@@ -1,0 +1,9 @@
+/* AUTHOR STYLESHEET */
+h1 {
+  font-size: 72px;
+  font-family: "Arial Rounded MT Bold", "Arial Narrow Bold", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: purple;
+}
+
