@@ -48,8 +48,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 <li><a href="#rule-evaluation">Rule Evaluation</a></li>
 <li><a href="#take-a-deep-breath">Take a Deep Breath</a></li>
-<li><a href="#specificity-details">Specificity Details</a><ul>
+<li><a href="#specificity">Specificity</a><ul>
 <li><a href="#calculating-specificity">Calculating Specificity</a></li>
+<li><a href="#specificity-and-inheritance">Specificity and Inheritance</a></li>
+<li><a href="#specificity-and-performance">Specificity and Performance</a></li>
 </ul></li>
 <li><a href="#media">Media</a><ul>
 <li><a href="#print-media">Print Media</a></li>
@@ -206,8 +208,8 @@ h1 <span class="kw">{</span>
 </ul>
 <p>Whew!</p>
 </section>
-<section id="specificity-details" class="level2">
-<h2>Specificity Details</h2>
+<section id="specificity" class="level2">
+<h2>Specificity</h2>
 <p>I’ve shown you earlier that origin is considered before specificity, but I have a confession to make…page authors generally only need to worry about specificity since, as stated, the author stylesheet gets the most weight.</p>
 <section id="calculating-specificity" class="level3">
 <h3>Calculating Specificity</h3>
@@ -252,6 +254,26 @@ body <span class="kw">{</span> <span class="kw">color:</span> <span class="dt">b
 <li>Three elements <code>ul</code>, <code>li</code>, and <code>p</code>, as well as one pseudo-element <code>:first-line</code> so d=4</li>
 </ul>
 <p>Selector syntax is out of the scope for this book, but you can find the general rules for <a href="http://www.w3.org/TR/css3-selectors/#selectors">selectors here</a>.</p>
+</section>
+<section id="specificity-and-inheritance" class="level3">
+<h3>Specificity and Inheritance</h3>
+<p>In his tome on CSS, <a href="http://shop.oreilly.com/product/9780596527334.do">CSS: The Definitive Guide, 3rd Edition</a>, Eric Meyer points out that inherited values have absolutely no specificity at all–yes, that’s less than zero specificity–so an inherited rule will lose to a rule defined by the universal selector:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;style&gt;</span>
+  * <span class="kw">{</span>
+    <span class="kw">color:</span> <span class="dt">green</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="fl">.outer</span> <span class="kw">{</span>
+    <span class="kw">color:</span> <span class="dt">blue</span><span class="kw">;</span>
+  <span class="kw">}</span>
+<span class="kw">&lt;/style&gt;</span>
+<span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;outer&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;p&gt;</span>I will be green<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
+<p>The takeaway is that inherited rules have no specificity regardless of how specific the rule is when applied to the original ancester element.</p>
+</section>
+<section id="specificity-and-performance" class="level3">
+<h3>Specificity and Performance</h3>
+<p>Worrying about selector performance is generally a futile effort, but, if you agree that <a href="http://smacss.com/book/applicability">deep selectors</a> are detrimental anyway, you’ll be happy to learn that <a href="https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors">browsers parse CSS from right to left</a> where the rightmost selector, called the <em>key</em>, is first considered before those to the left of it. You’ll likely benefit much more from removing unused rules, than from trying to hand optimize the depth of selectors, but, you should adopt a coding style such as <a href="https://smacss.com/">smacss</a> or <a href="https://github.com/stubbornella/oocss/wiki#two-main-principles-of-oocss">oocss</a> that prevents this in the first place.</p>
 </section>
 </section>
 <section id="media" class="level2">

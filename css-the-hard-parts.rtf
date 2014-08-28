@@ -136,7 +136,7 @@ spec on value-stages
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Then inherited rules\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Then initial values\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Whew!\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Specificity Details\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Specificity\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 I\u8217've shown you earlier that origin is considered before specificity, but I have a confession to make\u8230?page authors generally only need to worry about specificity since, as stated, the author stylesheet gets the most weight.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Calculating Specificity\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 In order to determine how two or more conflicting style rules will get resolved (providing they have the same {\i weight}), the browser uses a sort of \u8220"scoring system\u8221" called {\field{\*\fldinst{HYPERLINK "http://www.w3.org/TR/CSS2/cascade.html#specificity"}}{\fldrslt{\ul
@@ -185,6 +185,37 @@ body \{ color: blue; \}\line
 selectors here
 }}}
 .\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Specificity and Inheritance\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 In his tome on CSS, {\field{\*\fldinst{HYPERLINK "http://shop.oreilly.com/product/9780596527334.do"}}{\fldrslt{\ul
+CSS: The Definitive Guide, 3rd Edition
+}}}
+, Eric Meyer points out that inherited values have absolutely no specificity at all\u8211-yes, that\u8217's less than zero specificity\u8211-so an inherited rule will lose to a rule defined by the universal selector:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 <style>\line
+  * \{\line
+    color: green;\line
+  \}\line
+  .outer \{\line
+    color: blue;\line
+  \}\line
+</style>\line
+<div class="outer">\line
+  <p>I will be green</p>\line
+</div>\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The takeaway is that inherited rules have no specificity regardless of how specific the rule is when applied to the original ancester element.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Specificity and Performance\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Worrying about selector performance is generally a futile effort, but, if you agree that {\field{\*\fldinst{HYPERLINK "http://smacss.com/book/applicability"}}{\fldrslt{\ul
+deep selectors
+}}}
+ are detrimental anyway, you\u8217'll be happy to learn that {\field{\*\fldinst{HYPERLINK "https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors"}}{\fldrslt{\ul
+browsers parse CSS from right to left
+}}}
+ where the rightmost selector, called the {\i key}, is first considered before those to the left of it. You\u8217'll likely benefit much more from removing unused rules, than from trying to hand optimize the depth of selectors, but, you should adopt a coding style such as {\field{\*\fldinst{HYPERLINK "https://smacss.com/"}}{\fldrslt{\ul
+smacss
+}}}
+ or {\field{\*\fldinst{HYPERLINK "https://github.com/stubbornella/oocss/wiki#two-main-principles-of-oocss"}}{\fldrslt{\ul
+oocss
+}}}
+ that prevents this in the first place.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Media\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 As mentioned earlier, the first step in evaluating the cascade, is to gather all relevent rules that apply for the current medium. This can be a factor when you\u8217're web site or application targets more than one medium. We\u8217'll take on print as that\u8217's a common use case.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Print Media\par}

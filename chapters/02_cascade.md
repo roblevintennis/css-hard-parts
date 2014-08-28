@@ -180,7 +180,7 @@ We've delved pretty deep into the details of the Cascade. Let's try not to get t
 
 Whew!
 
-## Specificity Details
+## Specificity
 
 I've shown you earlier that origin is considered before specificity, but I have a confession to make…page authors generally only need to worry about specificity since, as stated, the author stylesheet gets the most weight.
 
@@ -238,6 +238,30 @@ Let's look at one more fairly complex selector:
 * Three elements `ul`, `li`, and `p`, as well as one pseudo-element `:first-line` so d=4
 
 Selector syntax is out of the scope for this book, but you can find the general rules for [selectors here](http://www.w3.org/TR/css3-selectors/#selectors).
+
+### Specificity and Inheritance
+
+In his tome on CSS, [CSS: The Definitive Guide, 3rd Edition](http://shop.oreilly.com/product/9780596527334.do), Eric Meyer points out that inherited values have absolutely no specificity at all–yes, that's less than zero specificity–so an inherited rule will lose to a rule defined by the universal selector:
+
+```html
+<style>
+  * {
+    color: green;
+  }
+  .outer {
+  	color: blue;
+  }
+</style>
+<div class="outer">
+  <p>I will be green</p>
+</div>
+```
+
+The takeaway is that inherited rules have no specificity regardless of how specific the rule is when applied to the original ancester element.
+
+### Specificity and Performance
+
+Worrying about selector performance is generally a futile effort, but, if you agree that [deep selectors](http://smacss.com/book/applicability) are detrimental anyway, you'll be happy to learn that [browsers parse CSS from right to left](https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors) where the rightmost selector, called the *key*, is first considered before those to the left of it. You'll likely benefit much more from removing unused rules, than from trying to hand optimize the depth of selectors, but, you should adopt a coding style such as [smacss](https://smacss.com/) or [oocss](https://github.com/stubbornella/oocss/wiki#two-main-principles-of-oocss) that prevents this in the first place.
 
 ##Media
 
