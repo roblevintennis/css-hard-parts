@@ -1,6 +1,6 @@
-# The Secret to Creating Buttons
+# CSS: The Hard Parts
 
-This will be the repo for the book The Secret to Creating Buttons.
+This will be the repo for the book CSS: The Hard Parts.
 
 ## Setup
 
