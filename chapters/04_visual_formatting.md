@@ -11,10 +11,10 @@ Let's review of the CSS box model:
 
 Taking the example diagram from the inside out we have:
 
-1. Content: The content area contains your text, images, etc.
-2. Padding: The content can optionally be surrounded by padding
-3. Border: The box optionally can have a visible border
-4. Margin: A transparent area that surrounds the box
+# Content: The content area contains your text, images, etc.
+# Padding: The content can optionally be surrounded by padding
+# Border: The box optionally can have a visible border
+# Margin: A transparent area that surrounds the box
 
 ### Edges
 
@@ -22,18 +22,26 @@ The edges of the above described sections of the box can be further broken down 
 
 Edges can be shared as per the specification, starting with the padding edge:
 
-> If the padding has 0 width, the padding edge is the same as the content edge
+  > If the padding has 0 width, the padding edge is the same as the content edge
 
 Same for borders:
 
-> If the border has 0 width, the border edge is the same as the padding edge
+  > If the border has 0 width, the border edge is the same as the padding edge
 
 And for margins:
 
-> If the margin has 0 width, the margin edge is the same as the border edge
+  > If the margin has 0 width, the margin edge is the same as the border edge
 
 ### Backgrounds
 
 The content and padding background are specified by the containing block's *background* property (and, additionally, any of its children's background properties). Margins are transparent.
+
+### Widths
+
+We'll delve deeper in to how the width of a box is calculated, but, for now, let's take the simplest case that width–in the most simplest cases–is determined by adding up the components of the box model:
+
+*Left margin + left border + left padding + content + right padding + right border + right margin = width*
+
+## Margins
 
 
