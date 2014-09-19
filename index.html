@@ -70,15 +70,11 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#resources">Resources</a></li>
 </ul></li>
 <li><a href="#visual-formatting">Visual Formatting</a><ul>
-<li><a href="#box-model-review">Box Model Review</a></li>
-</ul></li>
-<li><a href="#content-the-content-area-contains-your-text-images-etc.">Content: The content area contains your text, images, etc.</a></li>
-<li><a href="#padding-the-content-can-optionally-be-surrounded-by-padding">Padding: The content can optionally be surrounded by padding</a></li>
-<li><a href="#border-the-box-optionally-can-have-a-visible-border">Border: The box optionally can have a visible border</a></li>
-<li><a href="#margin-a-transparent-area-that-surrounds-the-box">Margin: A transparent area that surrounds the box</a><ul>
+<li><a href="#box-model-review">Box Model Review</a><ul>
 <li><a href="#edges">Edges</a></li>
 <li><a href="#backgrounds">Backgrounds</a></li>
 <li><a href="#widths">Widths</a></li>
+</ul></li>
 <li><a href="#margins">Margins</a></li>
 <li><a href="#horizontal-formatting">Horizontal Formatting</a><ul>
 <li><a href="#width">Width</a></li>
@@ -393,19 +389,12 @@ body <span class="kw">{</span> <span class="kw">color:</span> <span class="dt">b
 <h2>Box Model Review</h2>
 <p>Let’s review of the CSS box model:</p>
 <p><img src="examples/visual/box-model.png" title="The box model consists of margin, border, padding, and content" alt="Box Model" /><br /> Taking the example diagram from the inside out we have:</p>
-</section>
-</section>
-<section id="content-the-content-area-contains-your-text-images-etc." class="level1">
-<h1>Content: The content area contains your text, images, etc.</h1>
-</section>
-<section id="padding-the-content-can-optionally-be-surrounded-by-padding" class="level1">
-<h1>Padding: The content can optionally be surrounded by padding</h1>
-</section>
-<section id="border-the-box-optionally-can-have-a-visible-border" class="level1">
-<h1>Border: The box optionally can have a visible border</h1>
-</section>
-<section id="margin-a-transparent-area-that-surrounds-the-box" class="level1">
-<h1>Margin: A transparent area that surrounds the box</h1>
+<ul>
+<li>Content: The content area contains your text, images, etc.</li>
+<li>Padding: The content can optionally be surrounded by padding</li>
+<li>Border: The box optionally can have a visible border</li>
+<li>Margin: A transparent area that surrounds the box</li>
+</ul>
 <section id="edges" class="level3">
 <h3>Edges</h3>
 <p>The edges of the above described sections of the box can be further broken down in to top, right, bottom, and left. We can thus describe the top outermost area of content just before the padding starts as the <em>top content edge</em>. Similarly, we might describe the bottom-most padding area just before the border as the <em>bottom padding edge</em>.</p>
@@ -430,6 +419,7 @@ body <span class="kw">{</span> <span class="kw">color:</span> <span class="dt">b
 <h3>Widths</h3>
 <p>We’ll delve deeper in to how the width of a box is calculated, but, for now, let’s take the simplest case that width–in the most simplest cases–is determined by adding up the components of the box model:</p>
 <p><em>Left margin + left border + left padding + content + right padding + right border + right margin = width</em></p>
+</section>
 </section>
 <section id="margins" class="level2">
 <h2>Margins</h2>

@@ -11,10 +11,10 @@ Let's review of the CSS box model:
 
 Taking the example diagram from the inside out we have:
 
-# Content: The content area contains your text, images, etc.
-# Padding: The content can optionally be surrounded by padding
-# Border: The box optionally can have a visible border
-# Margin: A transparent area that surrounds the box
+- Content: The content area contains your text, images, etc.
+- Padding: The content can optionally be surrounded by padding
+- Border: The box optionally can have a visible border
+- Margin: A transparent area that surrounds the box
 
 ### Edges
 
