@@ -38,6 +38,16 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </header>
 <nav id="TOC">
 <ul>
+<li><a href="#why-this-book">Why This Book?</a></li>
+<li><a href="#tools-well-be-using">Tools We’ll Be Using</a><ul>
+<li><a href="#pedantic-examples">Pedantic Examples</a></li>
+<li><a href="#styleguide-driven-development-or-sdd">Styleguide Driven Development (or SDD)</a></li>
+<li><a href="#reference-materials">Reference Materials</a></li>
+<li><a href="#whats-a-styleguide">What’s a Styleguide?</a></li>
+<li><a href="#styleguide-driven-development">Styleguide Driven Development</a></li>
+<li><a href="#setting-up-tdcss">Setting Up TDCSS</a></li>
+<li><a href="#our-first-module">Our First Module</a></li>
+</ul></li>
 <li><a href="#cascade-rules">Cascade Rules</a><ul>
 <li><a href="#css-rule-sorting">CSS Rule Sorting</a></li>
 <li><a href="#origin">Origin</a></li>
@@ -59,8 +69,69 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 <li><a href="#resources">Resources</a></li>
 </ul></li>
+<li><a href="#visual-formatting">Visual Formatting</a><ul>
+<li><a href="#box-model-review">Box Model Review</a><ul>
+<li><a href="#edges">Edges</a></li>
+<li><a href="#backgrounds">Backgrounds</a></li>
+</ul></li>
+</ul></li>
 </ul>
 </nav>
+<section id="why-this-book" class="level1">
+<h1>Why This Book?</h1>
+<p>I’ve observed that there are certain areas of CSS that seem to fluster and confuse many developers in our industry. This is an issue because small, medium, and large teams alike, will tend to: * Add technical debt as they write poor CSS code * Miss deadlines because they spend too much time “fighting the DOM” * Stop having fun!</p>
+<p>With this in mind, I’ve decided to focus on primarily on–what I’m calling CSS’s <em>hard parts</em>–with the hopes that you’ll be armed with the foundation that will help you to breeze through the next feature you have to code up. Now <em>hard parts</em> is a bit of a misnomer because there are plenty of hard parts we will <em>not</em> be addressing. What I will be focusing on, primarily, are parts of CSS that allow you to: * Create useful components (or modules if you prefer) * Layout pages and sections of pages</p>
+<p>These two core tasks are the day-to-day, in the trenches reality of what a front-end developer or designer must tackle to keep pace with that next feature’s technical demands. So what does this mean?</p>
+<ul>
+<li>We’ll focus more on core visual formatting and box-model related concepts and quirks than things like <em>selectors</em>, fancy CSS3 features. For some reason it seems that developers have much less trouble with the later than the former.</li>
+</ul>
+</section>
+<section id="tools-well-be-using" class="level1">
+<h1>Tools We’ll Be Using</h1>
+<p>CSS is very hard to understand without lots of live examples and visual aids. We’ll use a combination of the following tools as listed:</p>
+<section id="pedantic-examples" class="level3">
+<h3>Pedantic Examples</h3>
+<p>We’ll use the online tool, <a href="codepen.io" class="uri">codepen.io</a> for examples that are mainly pedantic in nature, but help to illustrate a concept or a set of concepts.</p>
+</section>
+<section id="styleguide-driven-development-or-sdd" class="level3">
+<h3>Styleguide Driven Development (or SDD)</h3>
+<p>We’ll also build a small component library as we study the “hard parts” of CSS since: * There’s nothing like real world examples to bring home CSS’s core concepts * It’s always fun to have something useful as an extra benefit of study :)</p>
+</section>
+<section id="reference-materials" class="level3">
+<h3>Reference Materials</h3>
+<p>Admittedly, much of the material we’ll cover is available directly from the <a href="http://www.w3.org/TR/CSS2/">specification</a> and, essentially, derivative of that single source of truth. However, my hope is that this content will provide a more accessible coverage of this information and also show how it’s applied in a practical way. All said, we will be heavily referencing the following excellent materials (all of which you should strongly consider adding to your collection of “must-read” materials if you’re really serious about your CSS chops!):</p>
+<ul>
+<li><p><a href="http://www.w3.org/TR/CSS2/">CSS 2.1 Specification</a> The spec is sometimes hard to understand on the first read, but it’s always reliable and definitive.</p></li>
+<li><p>Eric Meyer’s <a href="http://meyerweb.com/eric/books/css-tdg/">CSS: The Definitive Guide, Third Edition</a> I think of this text as a sort of annotated and slightly more readable version of the spec (hey, he wrote test specs for CSS itself so he’s gotta know the spec…right?!?!). Having them both available is great for cross-reference.</p></li>
+<li><p>Russ Weakley’s <a href="http://www.slideshare.net/maxdesign/presentations">Slideshare Presentations</a> I’ll be linking to some of my favorites of these Slideshares as they are extremely approachable and visual, while–at the same time–accurate and trustworthy.</p></li>
+<li><p><a href="http://www.cssmastery.com/">CSS Mastery</a></p></li>
+</ul>
+<p>Another very useful book that many “CSS wizards” swear by.</p>
+</section>
+<section id="whats-a-styleguide" class="level2">
+<h2>What’s a Styleguide?</h2>
+</section>
+<section id="styleguide-driven-development" class="level2">
+<h2>Styleguide Driven Development</h2>
+<ul>
+<li>Examples of great styleguides e.g. Mailchimp, Starbucks</li>
+<li>Styleguide Generators,Pattern Library</li>
+<li>Why TDCSS? (live styleguide, etc.)</li>
+</ul>
+</section>
+<section id="setting-up-tdcss" class="level2">
+<h2>Setting Up TDCSS</h2>
+<ul>
+<li>Testing your module</li>
+<li>A bit of styling (SHOW HOW TO STYLE TDCSS)</li>
+<li>Getting your team to use your module (and other benefits of having a styleguide)</li>
+</ul>
+</section>
+<section id="our-first-module" class="level2">
+<h2>Our First Module</h2>
+<p>TBD .. media box???</p>
+</section>
+</section>
 <section id="cascade-rules" class="level1">
 <h1>Cascade Rules</h1>
 <p>This chapter will discuss how the browser determines which style rule(s) to apply to a particular DOM element. The details for how this is done are in the <a href="http://www.w3.org/TR/CSS2/cascade.html">specification</a> on the Cascade.</p>
@@ -299,6 +370,41 @@ body <span class="kw">{</span> <span class="kw">color:</span> <span class="dt">b
 <p><a href="http://shop.oreilly.com/product/9780596527334.do">CSS: The Definitive Guide, 3rd Edition</a></p>
 <p><a href="http://meyerweb.com/eric/books/smashing/">Smashing CSS: Professional Techniques for Modern Layout</a></p>
 <p>If you’d like a visual presentation of how the cascade rules are applied you may want to check out Russ Weakley’s excellent <a href="http://www.slideshare.net/maxdesign/css-cascade-1658158">CSS Cascade Slideshare</a> chock full of extremely useful examples.</p>
+</section>
+</section>
+<section id="visual-formatting" class="level1">
+<h1>Visual Formatting</h1>
+<p>This chapter will discuss CSS’s main weapon of choice, boxes. The CSS <em>box model</em> defines how rectangular boxes are to be laid on in your document. As always, I encourage you to cross-reference the details in the <a href="http://www.w3.org/TR/CSS2/box.html">box-model specification</a>, and the <a href="http://www.w3.org/TR/CSS2/visuren.html">visual formatting model specification</a>.</p>
+<section id="box-model-review" class="level2">
+<h2>Box Model Review</h2>
+<p>Let’s review of the CSS box model:</p>
+<p><img src="examples/visual/box-model.png" title="The box model consists of margin, border, padding, and content" alt="Box Model" /><br /> Taking the example diagram from the inside out we have:</p>
+<ol type="1">
+<li>Content: The content area contains your text, images, etc.</li>
+<li>Padding: The content can optionally be surrounded by padding</li>
+<li>Border: The box optionally can have a visible border</li>
+<li>Margin: A transparent area that surrounds the box</li>
+</ol>
+<section id="edges" class="level3">
+<h3>Edges</h3>
+<p>The edges of the above described sections of the box can be further broken down in to top, right, bottom, and left. We can thus describe the top outermost area of content just before the padding starts as the <em>top content edge</em>. Similarly, we might describe the bottom-most padding area just before the border as the <em>bottom padding edge</em>.</p>
+<p>Edges can be shared as per the specification, starting with the padding edge:</p>
+<blockquote>
+<p>If the padding has 0 width, the padding edge is the same as the content edge</p>
+</blockquote>
+<p>Same for borders:</p>
+<blockquote>
+<p>If the border has 0 width, the border edge is the same as the padding edge</p>
+</blockquote>
+<p>And for margins:</p>
+<blockquote>
+<p>If the margin has 0 width, the margin edge is the same as the border edge</p>
+</blockquote>
+</section>
+<section id="backgrounds" class="level3">
+<h3>Backgrounds</h3>
+<p>The content and padding background are specified by the containing block’s <em>background</em> property (and, additionally, any of its children’s background properties). Margins are transparent.</p>
+</section>
 </section>
 </section>
 <script type="text/javascript">
