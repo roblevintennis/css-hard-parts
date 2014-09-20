@@ -48,6 +48,22 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#setting-up-tdcss">Setting Up TDCSS</a></li>
 <li><a href="#our-first-module">Our First Module</a></li>
 </ul></li>
+<li><a href="#visual-formatting">Visual Formatting</a><ul>
+<li><a href="#box-model-review">Box Model Review</a><ul>
+<li><a href="#edges">Edges</a></li>
+<li><a href="#backgrounds">Backgrounds</a></li>
+<li><a href="#widths">Widths</a></li>
+</ul></li>
+<li><a href="#margins">Margins</a></li>
+<li><a href="#horizontal-formatting">Horizontal Formatting</a><ul>
+<li><a href="#width">Width</a></li>
+<li><a href="#overconstrained-values">Overconstrained Values</a></li>
+<li><a href="#horizontal-centering">Horizontal Centering</a></li>
+</ul></li>
+<li><a href="#vertical-formatting">Vertical Formatting</a><ul>
+<li><a href="#margin-collapsing">Margin Collapsing</a></li>
+</ul></li>
+</ul></li>
 <li><a href="#cascade-rules">Cascade Rules</a><ul>
 <li><a href="#css-rule-sorting">CSS Rule Sorting</a></li>
 <li><a href="#origin">Origin</a></li>
@@ -68,22 +84,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#debugging-print-styles">Debugging Print Styles</a></li>
 </ul></li>
 <li><a href="#resources">Resources</a></li>
-</ul></li>
-<li><a href="#visual-formatting">Visual Formatting</a><ul>
-<li><a href="#box-model-review">Box Model Review</a><ul>
-<li><a href="#edges">Edges</a></li>
-<li><a href="#backgrounds">Backgrounds</a></li>
-<li><a href="#widths">Widths</a></li>
-</ul></li>
-<li><a href="#margins">Margins</a></li>
-<li><a href="#horizontal-formatting">Horizontal Formatting</a><ul>
-<li><a href="#width">Width</a></li>
-<li><a href="#overconstrained-values">Overconstrained Values</a></li>
-<li><a href="#horizontal-centering">Horizontal Centering</a></li>
-</ul></li>
-<li><a href="#vertical-formatting">Vertical Formatting</a><ul>
-<li><a href="#margin-collapsing">Margin Collapsing</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -106,6 +106,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <section id="styleguide-driven-development-or-sdd" class="level3">
 <h3>Styleguide Driven Development (or SDD)</h3>
 <p>We’ll also build a small component library as we study the “hard parts” of CSS since: * There’s nothing like real world examples to bring home CSS’s core concepts * It’s always fun to have something useful as an extra benefit of study :)</p>
+<p><em>Note that some code examples may purposely omit “presentational styles” such as borders, background colors, etc., in effort to more potently highlight the code being discussed</em></p>
 </section>
 <section id="reference-materials" class="level3">
 <h3>Reference Materials</h3>
@@ -140,6 +141,140 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <section id="our-first-module" class="level2">
 <h2>Our First Module</h2>
 <p>TBD .. media box???</p>
+</section>
+</section>
+<section id="visual-formatting" class="level1">
+<h1>Visual Formatting</h1>
+<p>This chapter will discuss CSS’s main weapon of choice, boxes. The CSS <em>box model</em> defines how rectangular boxes are to be laid on in your document. As always, I encourage you to cross-reference the details in the <a href="http://www.w3.org/TR/CSS2/box.html">box-model specification</a>, and the <a href="http://www.w3.org/TR/CSS2/visuren.html">visual formatting model specification</a>.</p>
+<section id="box-model-review" class="level2">
+<h2>Box Model Review</h2>
+<p>Let’s review of the CSS box model:</p>
+<div class="figure-caption-wrapper">
+<img src="examples/visual/box-model.png" title="The box model consists of margin, border, padding, and content" alt="Box Model" /><br />
+<div class="figure-caption">
+The box model consists of margin, border, padding, and content
+</div>
+</div>
+<p>Taking the example diagram from the inside out we have:</p>
+<ul>
+<li>Content: The content area contains your text, images, etc.</li>
+<li>Padding: The content can optionally be surrounded by padding</li>
+<li>Border: The box optionally can have a visible border</li>
+<li>Margin: A transparent area that surrounds the box</li>
+</ul>
+<section id="edges" class="level3">
+<h3>Edges</h3>
+<p>The edges of the above described sections of the box can be further broken down in to top, right, bottom, and left. We can thus describe the top outermost area of content just before the padding starts as the <em>top content edge</em>. Similarly, we might describe the bottom-most padding area just before the border as the <em>bottom padding edge</em>.</p>
+<p>Edges can be shared as per the specification, starting with the padding edge:</p>
+<blockquote>
+<p>If the padding has 0 width, the padding edge is the same as the content edge</p>
+</blockquote>
+<p>Same for borders:</p>
+<blockquote>
+<p>If the border has 0 width, the border edge is the same as the padding edge</p>
+</blockquote>
+<p>And for margins:</p>
+<blockquote>
+<p>If the margin has 0 width, the margin edge is the same as the border edge</p>
+</blockquote>
+</section>
+<section id="backgrounds" class="level3">
+<h3>Backgrounds</h3>
+<p>The content and padding background are specified by the containing block’s <em>background</em> property (and, additionally, any of its children’s background properties). Margins are transparent.</p>
+</section>
+<section id="widths" class="level3">
+<h3>Widths</h3>
+<p>We’ll delve deeper in to how the width of a box is calculated, but, for now, let’s take the simplest case that width–in the most simplest cases–is determined by adding up the components of the box model:</p>
+<p><em>Left margin + left border + left padding + content + right padding + right border + right margin = width</em></p>
+</section>
+</section>
+<section id="margins" class="level2">
+<h2>Margins</h2>
+<p>Margins can be set for all four sides with the caveat that vertical margins will not effect non-replaced inline elements (such as images).</p>
+<p>Margins can be set with either of: <code>auto</code> (which we’ll discuss in a later section), <code>length</code>, or <code>percentage</code>.</p>
+<p>Margins set with length are fairly straight forward as you specify a fixed value such as <code>margin: 5px</code>;</p>
+<p>Margins set with percentage are bit trickier starting with this fact from the <a href="http://www.w3.org/TR/CSS2/box.html#margin-properties">spec</a>:</p>
+<blockquote>
+<p>The percentage is calculated with respect to the width of the generated box’s containing block. <strong>Note that this is true for ‘margin-top’ and ‘margin-bottom’ as well.</strong>…</p>
+</blockquote>
+<p>The takeaway is to be careful if you use <code>margin-top</code> or <code>margin-bottom</code> with a percentage since that percentage is relative to the containing block’s width (not it’s height).</p>
+</section>
+<section id="horizontal-formatting" class="level2">
+<h2>Horizontal Formatting</h2>
+<p>When thinking about horizontal formatting an obvious question is “How is an element’s width calculated?”. Let’s start there.</p>
+<p>http://codepen.io/roblevin/pen/gmsIx</p>
+<section id="width" class="level3">
+<h3>Width</h3>
+<p>A particular block-level boxes width must add up to its containing block’s “content edge”. Therefore, if a containing block as a width of 80 pixels and the padding on the sides adds up to 20 pixels (provided there’s no margin or borders), its width is 100 pixels. Thus a child block-level element’s width will be 100 pixels per the <a href="http://www.w3.org/TR/CSS2/visudet.html#blockwidth">spec</a>:</p>
+<blockquote>
+<p>‘margin-left’ + ‘border-left-width’ + ‘padding-left’ + ‘width’ + ‘padding-right’ + ‘border-right-width’ + ‘margin-right’ = <em>width of containing block</em></p>
+</blockquote>
+<p>If the spec isn’t clear enough we can refer to the following from Eric Meyer:</p>
+<blockquote>
+<p>For an element in the normal, Western-style flow of text, the containing block is formed by the <em>content edge</em> of the nearest block-level, table-cell, or inline-block anscestor box.</p>
+</blockquote>
+<div class="figure-caption-wrapper">
+<img src="examples/visual/containing-block-width.png" title="Width is set by the element&#39;s containing block&#39;s width" alt="Containing Block Width" /><br />
+<div class="figure-caption">
+A child element extends to the content edge of its containing block (in this case, up to the container’s red border).
+</div>
+</div>
+<section id="auto" class="level4">
+<h4>Auto</h4>
+<p>Generally, a horizontal property having a value of <code>auto</code> will result in that property being calculated to be whatever is required to comply with the rule stated above (that block-level box widths add up to their containing block’s width).</p>
+<p>For example, let’s say we have code specified as follows:</p>
+<pre class="sourceCode html"><code class="sourceCode html">…
+<span class="kw">&lt;style&gt;</span>
+p <span class="kw">{</span>
+  <span class="kw">margin-left:</span> <span class="dt">auto</span><span class="kw">;</span>
+  <span class="kw">margin-right:</span> <span class="dt">100px</span><span class="kw">;</span>
+  <span class="kw">width:</span> <span class="dt">100px</span><span class="kw">;</span>
+<span class="kw">}</span>
+div <span class="kw">{</span>
+  <span class="kw">width:</span> <span class="dt">400px</span><span class="kw">;</span>
+  <span class="kw">height:</span> <span class="dt">50px</span><span class="kw">;</span>
+  <span class="er">…</span>
+<span class="kw">}</span>
+<span class="kw">&lt;/style&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+  <span class="kw">&lt;div&gt;&lt;p&gt;</span>This is a paragraph<span class="kw">&lt;/p&gt;&lt;/div&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre>
+<p>Note that our paragraph is defined with a left margin of auto, and a width &amp; right margin to 100px, while the containing block is defined at 400 pixels wide. Since the content edge of this containing block is 400 pixels wide, the <code>margin-left</code> will need to be 200 pixels to comply with the width rule we’ve stated above. Thus, the <em>computed value</em> (the value that the user agent computes versus your declared CSS values), will be 200 pixels.</p>
+<div class="figure-caption-wrapper">
+<img src="examples/visual/margin-left-auto.png" title="A margin-left of auto results in a computed value that&#39;s required for that element&#39;s width to be equal to it&#39;s containing block&#39;s width" alt="Left margin with auto" /><br />
+<div class="figure-caption">
+margin-left of auto results in a computed value required for total width to be equal to width of containing block
+</div>
+</div>
+</section>
+</section>
+<section id="overconstrained-values" class="level3">
+<h3>Overconstrained Values</h3>
+<p>If a child-block’s total specified values do not “add up” to the expected containing block width, then the difference will be made up on the right margin which will get set to <code>auto</code> regardless of the original value declared–provided the directionality is left-to-right; if not, the rule is flipped and the margin-left will make up the difference. So, in the following example we have a containing block width of 800 pixels, but the total declared widths have been overconstrained to 600 pixels (with <code>margin-left: 200px; width: 200px; margin-right: 200px;</code>). The declared <code>margin-right: 200px</code> will get reset to <code>margin-right: auto</code> and expand to 400 pixels wide:</p>
+<div class="figure-caption-wrapper">
+<img src="examples/visual/overconstrained-margin-right.png" title="Difference between width and total of overcontrained formatting properties filled in on right margin" alt="Overconstrained" /><br />
+<div class="figure-caption">
+Difference between width and total of overcontrained formatting properties filled in on right margin
+</div>
+</div>
+</section>
+<section id="horizontal-centering" class="level3">
+<h3>Horizontal Centering</h3>
+<p>You might already know this, but if you set the block-level child element’s margin to the same values such as: <code>margin-left: 200px; margin-right 200px</code>, and then set the width: <code>width: auto;</code>, the element will be horizontally centered.</p>
+<p><em>You can also center by setting the margin: <code>margin: 0 auto</code> where the natural content width will be used and then the left and right margins will be calculated equally to center the element.</em></p>
+</section>
+</section>
+<section id="vertical-formatting" class="level2">
+<h2>Vertical Formatting</h2>
+<p>TBD</p>
+<p>http://codepen.io/roblevin/pen/szavA?editors=110</p>
+<section id="margin-collapsing" class="level3">
+<h3>Margin Collapsing</h3>
+<p>http://www.w3.org/TR/CSS2/box.html#collapsing-margins</p>
+<p>http://codepen.io/roblevin/pen/Dnxbq?editors=110</p>
+</section>
 </section>
 </section>
 <section id="cascade-rules" class="level1">
@@ -380,110 +515,6 @@ body <span class="kw">{</span> <span class="kw">color:</span> <span class="dt">b
 <p><a href="http://shop.oreilly.com/product/9780596527334.do">CSS: The Definitive Guide, 3rd Edition</a></p>
 <p><a href="http://meyerweb.com/eric/books/smashing/">Smashing CSS: Professional Techniques for Modern Layout</a></p>
 <p>If you’d like a visual presentation of how the cascade rules are applied you may want to check out Russ Weakley’s excellent <a href="http://www.slideshare.net/maxdesign/css-cascade-1658158">CSS Cascade Slideshare</a> chock full of extremely useful examples.</p>
-</section>
-</section>
-<section id="visual-formatting" class="level1">
-<h1>Visual Formatting</h1>
-<p>This chapter will discuss CSS’s main weapon of choice, boxes. The CSS <em>box model</em> defines how rectangular boxes are to be laid on in your document. As always, I encourage you to cross-reference the details in the <a href="http://www.w3.org/TR/CSS2/box.html">box-model specification</a>, and the <a href="http://www.w3.org/TR/CSS2/visuren.html">visual formatting model specification</a>.</p>
-<section id="box-model-review" class="level2">
-<h2>Box Model Review</h2>
-<p>Let’s review of the CSS box model:</p>
-<p><img src="examples/visual/box-model.png" title="The box model consists of margin, border, padding, and content" alt="Box Model" /><br /> Taking the example diagram from the inside out we have:</p>
-<ul>
-<li>Content: The content area contains your text, images, etc.</li>
-<li>Padding: The content can optionally be surrounded by padding</li>
-<li>Border: The box optionally can have a visible border</li>
-<li>Margin: A transparent area that surrounds the box</li>
-</ul>
-<section id="edges" class="level3">
-<h3>Edges</h3>
-<p>The edges of the above described sections of the box can be further broken down in to top, right, bottom, and left. We can thus describe the top outermost area of content just before the padding starts as the <em>top content edge</em>. Similarly, we might describe the bottom-most padding area just before the border as the <em>bottom padding edge</em>.</p>
-<p>Edges can be shared as per the specification, starting with the padding edge:</p>
-<blockquote>
-<p>If the padding has 0 width, the padding edge is the same as the content edge</p>
-</blockquote>
-<p>Same for borders:</p>
-<blockquote>
-<p>If the border has 0 width, the border edge is the same as the padding edge</p>
-</blockquote>
-<p>And for margins:</p>
-<blockquote>
-<p>If the margin has 0 width, the margin edge is the same as the border edge</p>
-</blockquote>
-</section>
-<section id="backgrounds" class="level3">
-<h3>Backgrounds</h3>
-<p>The content and padding background are specified by the containing block’s <em>background</em> property (and, additionally, any of its children’s background properties). Margins are transparent.</p>
-</section>
-<section id="widths" class="level3">
-<h3>Widths</h3>
-<p>We’ll delve deeper in to how the width of a box is calculated, but, for now, let’s take the simplest case that width–in the most simplest cases–is determined by adding up the components of the box model:</p>
-<p><em>Left margin + left border + left padding + content + right padding + right border + right margin = width</em></p>
-</section>
-</section>
-<section id="margins" class="level2">
-<h2>Margins</h2>
-<p>Margins can be set for all four sides with the caveat that vertical margins will not effect non-replaced inline elements (such as images).</p>
-<p>Margins can be set with either of: <code>auto</code> (which we’ll discuss in a later section), <code>length</code>, or <code>percentage</code>.</p>
-<p>Margins set with length are fairly straight forward as you specify a fixed value such as <code>margin: 5px</code>;</p>
-<p>Margins set with percentage are bit trickier starting with this fact from the <a href="http://www.w3.org/TR/CSS2/box.html#margin-properties">spec</a>:</p>
-<blockquote>
-<p>The percentage is calculated with respect to the width of the generated box’s containing block. <strong>Note that this is true for ‘margin-top’ and ‘margin-bottom’ as well.</strong>…</p>
-</blockquote>
-<p>The takeaway is to be careful if you use <code>margin-top</code> or <code>margin-bottom</code> with a percentage since that percentage is relative to the containing block’s width (not it’s height).</p>
-</section>
-<section id="horizontal-formatting" class="level2">
-<h2>Horizontal Formatting</h2>
-<p>When thinking about horizontal formatting an obvious question is “How is an element’s width calculated?”. Let’s start there.</p>
-<p>http://codepen.io/roblevin/pen/gmsIx</p>
-<section id="width" class="level3">
-<h3>Width</h3>
-<p>A particular block-level boxes width must add up to its containing block’s “content edge”. Therefore, if a containing block as a width of 80 pixels and the padding on the sides adds up to 20 pixels (provided there’s no margin or borders), its width is 100 pixels. Thus a child block-level element’s width will be 100 pixels per the <a href="http://www.w3.org/TR/CSS2/visudet.html#blockwidth">spec</a>:</p>
-<blockquote>
-<p>‘margin-left’ + ‘border-left-width’ + ‘padding-left’ + ‘width’ + ‘padding-right’ + ‘border-right-width’ + ‘margin-right’ = <em>width of containing block</em></p>
-</blockquote>
-<p>If the spec isn’t clear enough we can refer to the following from Eric Meyer:</p>
-<blockquote>
-<p>For an element in the normal, Western-style flow of text, the containing block is formed by the <em>content edge</em> of the nearest block-level, table-cell, or inline-block anscestor box.</p>
-</blockquote>
-<p>TODO PROVIDE IMAGE HERE</p>
-<section id="auto" class="level4">
-<h4>Auto</h4>
-<p>Generally, a horizontal property having a value of <code>auto</code> will result in that property being calculated to be whatever is required to comply with the rule stated above (that block-level boxes add up to their containing block’s width).</p>
-<p>For example, let’s say we have code specified as follows:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div&gt;&lt;p&gt;</span>This is a paragraph<span class="kw">&lt;/p&gt;&lt;/div&gt;</span></code></pre>
-<pre class="sourceCode css"><code class="sourceCode css">div <span class="kw">{</span>
-  <span class="kw">width:</span> <span class="dt">800px</span><span class="kw">;</span>
-<span class="kw">}</span>
-p <span class="kw">{</span>
-  <span class="kw">margin-left:</span> <span class="dt">auto</span><span class="kw">;</span>
-  <span class="kw">margin-right:</span> <span class="dt">200px</span><span class="kw">;</span>
-  <span class="kw">width:</span> <span class="dt">200px</span><span class="kw">;</span>
-<span class="kw">}</span></code></pre>
-<p>Note that our paragraph is defined with a left margin of auto, and a width &amp; right margin to 200px, while the containing block is defined at 800 pixels wide. Since the content edge of this containing block is 800 pixels wide, the margin-left will need to be 400 pixels to comply with the width rule we’ve stated above.</p>
-<p>TODO PROVIDE IMAGE HERE</p>
-</section>
-</section>
-<section id="overconstrained-values" class="level3">
-<h3>Overconstrained Values</h3>
-<p>If a child-block’s total specified values do not “add up” to the expected containing block width, then the difference will be made up on the right margin (provided the directionality is left-to-right; if not, the rule is flipped and the margin-left will make up the difference).</p>
-<p>TODO PROVIDE IMAGE HERE ML 200px + Content 200px + MR 200px (MR will == 400px)</p>
-</section>
-<section id="horizontal-centering" class="level3">
-<h3>Horizontal Centering</h3>
-<p>You might already know this, but if you set the block-level child element’s margin to the same values such as: <code>margin-left: 200px; margin-right 200px</code>, and then set the width: <code>width: auto;</code>, the element will be horizontally centered.</p>
-<p><em>You can also center by setting the margin: <code>margin: 0 auto</code> where the natural content width will be used and then the left and right margins will be calculated equally to center the element.</em></p>
-</section>
-</section>
-<section id="vertical-formatting" class="level2">
-<h2>Vertical Formatting</h2>
-<p>TBD</p>
-<p>http://codepen.io/roblevin/pen/szavA?editors=110</p>
-<section id="margin-collapsing" class="level3">
-<h3>Margin Collapsing</h3>
-<p>http://www.w3.org/TR/CSS2/box.html#collapsing-margins</p>
-<p>http://codepen.io/roblevin/pen/Dnxbq?editors=110</p>
-</section>
 </section>
 </section>
 <script type="text/javascript">

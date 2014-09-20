@@ -1,1 +1,18 @@
-/* TODO */
+
+img {
+	display: block;
+	width: auto;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+.figure-caption-wrapper {
+	width: 65%;
+	margin: 0 auto;
+}
+
+.figure-caption {
+	font-size: 14px;
+	font-style: italic;
+	text-align: center;
+}

@@ -7,7 +7,11 @@ This chapter will discuss CSS's main weapon of choice, boxes. The CSS *box model
 
 Let's review of the CSS box model:
 
+<div class="figure-caption-wrapper">
 ![Box Model](examples/visual/box-model.png "The box model consists of margin, border, padding, and content")\
+
+<div class="figure-caption">The box model consists of margin, border, padding, and content</div>
+</div>
 
 Taking the example diagram from the inside out we have:
 
@@ -73,38 +77,62 @@ If the spec isn't clear enough we can refer to the following from Eric Meyer:
 
   >For an element in the normal, Western-style flow of text, the containing block is formed by the <em>content edge</em> of the nearest block-level, table-cell, or inline-block anscestor box.
 
-TODO PROVIDE IMAGE HERE
+<div class="figure-caption-wrapper">
+
+![Containing Block Width](examples/visual/containing-block-width.png "Width is set by the element's containing block's width")\
+
+<div class="figure-caption">A child element extends to the content edge of its containing block (in this case, up to the container's red border).</div>
+
+</div>
+
 
 #### Auto
 
-Generally, a horizontal property having a value of `auto` will result in that property being calculated to be whatever is required to comply with the rule stated above (that block-level boxes add up to their containing block's width).
+Generally, a horizontal property having a value of `auto` will result in that property being calculated to be whatever is required to comply with the rule stated above (that block-level box widths add up to their containing block's width).
 
 For example, let's say we have code specified as follows:
+
 ```html
-<div><p>This is a paragraph</p></div>
-```
-```css
-div {
-  width: 800px;
-}
+…
+<style>
 p {
   margin-left: auto;
-  margin-right: 200px;
-  width: 200px;
+  margin-right: 100px;
+  width: 100px;
 }
+div {
+  width: 400px;
+  height: 50px;
+  …
+}
+</style>
+</head>
+<body>
+  <div><p>This is a paragraph</p></div>
+</body>
+</html>
 ```
 
-Note that our paragraph is defined with a left margin of auto, and a width & right margin to 200px, while the containing block is defined at 800 pixels wide. Since the content edge of this containing block is 800 pixels wide, the margin-left will need to be 400 pixels to comply with the width rule we've stated above.
+Note that our paragraph is defined with a left margin of auto, and a width & right margin to 100px, while the containing block is defined at 400 pixels wide. Since the content edge of this containing block is 400 pixels wide, the `margin-left` will need to be 200 pixels to comply with the width rule we've stated above. Thus, the *computed value* (the value that the user agent computes versus your declared CSS values), will be 200 pixels.
 
-TODO PROVIDE IMAGE HERE
+<div class="figure-caption-wrapper">
+![Left margin with auto](examples/visual/margin-left-auto.png "A margin-left of auto results in a computed value that's required for that element's width to be equal to it's containing block's width")\
+
+<div class="figure-caption">margin-left of auto results in a computed value required for total width to be equal to width of containing block</div>
+</div>
 
 ### Overconstrained Values
 
-If a child-block's total specified values do not &ldquo;add up&rdquo; to the expected containing block width, then the difference will be made up on the right margin (provided the directionality is left-to-right; if not, the rule is flipped and the margin-left will make up the difference).
+If a child-block's total specified values do not &ldquo;add up&rdquo; to the expected containing block width, then the difference will be made up on the right margin which will get set to `auto` regardless of the original value declared–provided the directionality is left-to-right; if not, the rule is flipped and the margin-left will make up the difference. So, in the following example we have a containing block width of 800 pixels, but the total declared widths have been overconstrained to 600 pixels (with `margin-left: 200px; width: 200px; margin-right: 200px;`). The declared `margin-right: 200px` will get reset to `margin-right: auto` and expand to 400 pixels wide:
 
-TODO PROVIDE IMAGE HERE ML 200px + Content 200px + MR 200px (MR will == 400px)
+<div class="figure-caption-wrapper">
+![Overconstrained](examples/visual/overconstrained-margin-right.png "Difference between width and total of overcontrained formatting properties filled in on right margin")\
 
-###Horizontal Centering
+<div class="figure-caption">Difference between width and total of overcontrained formatting properties filled in on right margin</div>
+</div>
+
+
+### Horizontal Centering
 
 You might already know this, but if you set the block-level child element's margin to the same values such as: `margin-left: 200px; margin-right 200px`, and then set the width: `width: auto;`, the element will be horizontally centered.
 

@@ -56,6 +56,16 @@ For example, note the last '\' backslash character:
 ![Safari preferences](examples/cascade/safari-preference-user-style.png "Adding a user stylesheet via Safari's preferences dialog")\
 ```
 
+In order to get our figure captions back–they get removed once we apply the above trick–we've added the captions directly as follows:
+
+```pre
+<div class="figure-caption-wrapper">
+![Left margin with auto](examples/visual/margin-left-auto.png "auto margin-left results in computed value required for width to be equal to width of containing block")\
+
+<div class="figure-caption">margin-left of auto results in a computed value required for total width to be equal to width of containing block</div>
+</div>
+```
+
 ## Reference Materials
 
 http://johnmacfarlane.net/pandoc/epub.html

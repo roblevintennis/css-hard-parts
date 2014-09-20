@@ -29,6 +29,8 @@ We'll also build a small component library as we study the &ldquo;hard parts&rdq
 * There's nothing like real world examples to bring home CSS's core concepts
 * It's always fun to have something useful as an extra benefit of study :)
 
+*Note that some code examples may purposely omit &ldquo;presentational styles&rdquo; such as borders, background colors, etc., in effort to more potently highlight the code being discussed*
+
 ### Reference Materials
 
 Admittedly, much of the material we'll cover is available directly from the [specification](http://www.w3.org/TR/CSS2/) and, essentially, derivative of that single source of truth. However, my hope is that this content will provide a more accessible coverage of this information and also show how it's applied in a practical way. All said, we will be heavily referencing the following excellent materials (all of which you should strongly consider adding to your collection of &ldquo;must-read&rdquo; materials if you're really serious about your CSS chops!):
